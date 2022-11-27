@@ -1,0 +1,92 @@
+/* Global variables */
+/* 
+COLOR
+MIN_WIDTH
+MAX_WIDTH
+MARGIN 
+*/
+
+:root {
+    --logo_color: #484848;
+    --menu-color: #798b9e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+
+@font-face {
+    font-family: Arizona-Regular;
+    src: url("../font/Arizonia/Arizonia-Regular.ttf");
+}
+
+.logo {
+    text-align: center;
+    margin: 35px auto;
+}
+
+.logo-a {
+    font-family: Arizona-Regular;
+    font-size: 2em;
+    color: var(--logo_color);
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+#hamb-menu,
+.ham-menu-label {
+    display: none;
+}
+
+.hamburger-icon {
+    max-width: 2em;
+}
+
+.main-menu ul {
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+
+.main-menu li {
+    display: inline;
+    margin: 0 30px;
+    list-style-type: none;
+}
+
+.menu-a {
+    font-size: 1.5em;
+    color: var(--menu-color);
+    padding: 2px 5px;
+    text-decoration: none;
+    border-bottom: transparent;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+.smaller-menu {
+    font-size: 1em;
+}
+
+.menu-a:hover {
+    cursor: pointer;
+    color: var(--logo_color);
+    border-bottom: var(--logo_color) solid thin;
+}
+
+.active {
+    color: var(--logo_color);
+    border-bottom: var(--logo_color) solid thin;
+}
+
+.search-field {
+    padding: 3px;
+    font-size: medium;
+}
+
