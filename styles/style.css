@@ -1,21 +1,26 @@
-/* Global variables */
-/* 
-COLOR
-MIN_WIDTH
-MAX_WIDTH
-MARGIN 
-*/
+/* =========== Global variables ============ */
 
 :root {
     --logo_color: #484848;
     --menu-color: #798b9e;
+    --hover-color: #484848;
+    --menu-background-color: #ccd9e7;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+    margin: 0;
+}
+
+/* ==================================== HEADER ==================================== */
+
+header {
+    padding: 35px 0;
+    border-bottom: solid var(--menu-background-color) thin;
+}
 
 @font-face {
     font-family: Arizona-Regular;
@@ -24,12 +29,12 @@ html {
 
 .logo {
     text-align: center;
-    margin: 35px auto;
+    margin-bottom: 35px;
 }
 
 .logo-a {
     font-family: Arizona-Regular;
-    font-size: 2em;
+    font-size: 2.5em;
     color: var(--logo_color);
     text-decoration: none;
 }
@@ -37,6 +42,8 @@ html {
 .menu {
     display: flex;
     justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 #hamb-menu,
@@ -63,10 +70,9 @@ html {
 .menu-a {
     font-size: 1.5em;
     color: var(--menu-color);
-    padding: 2px 5px;
+    padding: 5px 25px;
     text-decoration: none;
-    border-bottom: transparent;
-    transition-property: color;
+    transition-property: all;
     transition-duration: 0.5s;
 }
 
@@ -76,13 +82,13 @@ html {
 
 .menu-a:hover {
     cursor: pointer;
-    color: var(--logo_color);
-    border-bottom: var(--logo_color) solid thin;
+    color: var(--hover-color);
+    background-color: var(--menu-background-color);
 }
 
 .active {
-    color: var(--logo_color);
-    border-bottom: var(--logo_color) solid thin;
+    color: var(--hover-color);
+    background-color: var(--menu-background-color);
 }
 
 .search-field {
@@ -90,3 +96,8 @@ html {
     font-size: medium;
 }
 
+/* ==================================== main ==================================== */
+.main-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
