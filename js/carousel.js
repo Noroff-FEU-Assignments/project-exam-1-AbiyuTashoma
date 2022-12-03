@@ -5,56 +5,69 @@ const nextContainer = document.querySelector(".next");
 const list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 let startIndex = 0;
+let endIndex = list.length - 4;
 
-function display () {
+function display (start = 0) {
     let html = "";
 
     for (let i = 0; i < 4; i++) {
-        if ((startIndex) >= list.length) {
-            startIndex = 0;
-            console.log("reset");
+
+        html += `<p>${list[start]}</p>`;
+
+        start += 1;
+
+        if (start >= list.length) {
+            start = 0;
         }
-
-        html += `<p>${list[startIndex]}</p>`;
-        console.log("index: " + (startIndex));
-        console.log("value: " + (list[startIndex]));
-
-        startIndex += 1;
+        
     }
 
+    startIndex = start;
+
     carouselListContainer.innerHTML = html;
+    console.log("start: " + start);
+    console.log("startIndex: " + startIndex);
+    console.log("endIndex: " + endIndex);
+    console.log("list: " + list);
 }
 
-function displayPreviuos () {
+function displayPreviuos (pStart = 0) {
     let html = "";
 
     for (let i = 0; i < 4; i++) {
-        startIndex -= 1;
 
-        if ((startIndex) < 0) {
-            startIndex = list.length - 1;
-            console.log("reset");
+        html += `<p>${list[pStart]}</p>`;
+
+        pStart += 1;
+        endIndex -= 1;
+
+        if (pStart >= list.length) {
+            pStart = 0;
         }
 
-        html += `<p>${list[startIndex]}</p>`;
-        console.log("index: " + (startIndex));
-        console.log("value: " + (list[startIndex]));
-
+        if (endIndex < 0) {
+            endIndex = list.length - 1;
+        }
     }
 
     carouselListContainer.innerHTML = html;
+
+    console.log("pStart: " + pStart);
+    console.log("startIndex: " + startIndex);
+    console.log("endIndex: " + endIndex);
+    console.log("list: " + list);
+}
+
+function next() {
+    endIndex = startIndex;
+    display(startIndex);
+}
+
+function previuos() {
+    startIndex = endIndex;
+    displayPreviuos(endIndex);
 }
 
 display();
-
-function next() {
-    display();
-}
-
 nextContainer.addEventListener("click", next);
-
-// function previuos() {
-//     displayPreviuos();
-// }
-
-// prevContainer.addEventListener("click", displayPreviuos);
+prevContainer.addEventListener("click", previuos);
