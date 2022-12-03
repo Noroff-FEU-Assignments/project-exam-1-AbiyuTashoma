@@ -1,9 +1,9 @@
 /* =========== Global variables ============ */
 
 :root {
-    --logo_color: #484848;
-    --menu-color: #798b9e;
-    --hover-color: #484848;
+    --logo_color: #2c2c2c;
+    --menu-color: #505050;
+    --hover-color: #2c2c2c;
     --menu-background-color: #ccd9e7;
 }
 
@@ -100,4 +100,24 @@ header {
 .main-section {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.landing-section {
+    background-image: url("../images/woman-landing.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 36vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 60%;
+    padding-right: 10%;
+}
+
+.landing-text {
+    font-size: xx-large;
+}
+
+.landing-text-div {
+    text-align: center;
 }
