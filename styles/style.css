@@ -133,21 +133,26 @@ header {
 /* ============= latest blogs ================ */
 
 .latest-blogs {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
 .tab {
     display: flex;
     gap: 20px;
-    /* margin-bottom: 50px; */
-    width: 50%;
 }
 
 .image-container {
     background-image: url("../images/casserole-dish.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     width: 100%;
+    background-position: center;
+}
+
+.image-href {
+    display: contents;
 }
 
 .text-container {
