@@ -5,9 +5,23 @@ const nextContainer = document.querySelector(".next");
 const list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 let startIndex = 0;
-let endIndex = list.length - 4;
+let endIndex = list.length;
 
-function display (start = 0) {
+function display () {
+    let html = "";
+
+    for (let i = 0; i < 4; i++) {
+
+        html += `<p>${list[i]}</p>`;
+
+        startIndex += 1;
+        endIndex -= 1;
+    }
+
+    carouselListContainer.innerHTML = html;
+}
+
+function displayNext (start = 0) {
     let html = "";
 
     for (let i = 0; i < 4; i++) {
@@ -15,6 +29,11 @@ function display (start = 0) {
         html += `<p>${list[start]}</p>`;
 
         start += 1;
+        endIndex += 1;
+
+        if (endIndex >= list.length) {
+            endIndex = 0;
+        }
 
         if (start >= list.length) {
             start = 0;
@@ -25,10 +44,6 @@ function display (start = 0) {
     startIndex = start;
 
     carouselListContainer.innerHTML = html;
-    console.log("start: " + start);
-    console.log("startIndex: " + startIndex);
-    console.log("endIndex: " + endIndex);
-    console.log("list: " + list);
 }
 
 function displayPreviuos (pStart = 0) {
@@ -40,6 +55,11 @@ function displayPreviuos (pStart = 0) {
 
         pStart += 1;
         endIndex -= 1;
+        startIndex -= 1;
+        
+        if (startIndex < 0) {
+            startIndex = list.length -1;
+        }
 
         if (pStart >= list.length) {
             pStart = 0;
@@ -51,20 +71,13 @@ function displayPreviuos (pStart = 0) {
     }
 
     carouselListContainer.innerHTML = html;
-
-    console.log("pStart: " + pStart);
-    console.log("startIndex: " + startIndex);
-    console.log("endIndex: " + endIndex);
-    console.log("list: " + list);
 }
 
 function next() {
-    endIndex = startIndex;
-    display(startIndex);
+    displayNext(startIndex);
 }
 
 function previuos() {
-    startIndex = endIndex;
     displayPreviuos(endIndex);
 }
 
