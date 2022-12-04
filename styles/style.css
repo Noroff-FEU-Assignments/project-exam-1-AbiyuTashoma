@@ -197,3 +197,12 @@ header {
 .carousel-button:hover {
     background-color: #9f9f9f;
 }
+
+/* ====================== footer ======================= */
+.footer-section {
+    background-color: #dedede;
+}
+
+.icon {
+    width: 2em;
+}
