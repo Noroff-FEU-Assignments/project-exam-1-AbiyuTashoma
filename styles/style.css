@@ -175,10 +175,24 @@ header {
 /* ============= carousel ================ */
 .carousel {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
 .carousel-list {
     display: flex;
     gap: 20px;
+}
+
+.carousel-button {
+    height: 130px;
+    font-size: xx-large;
+    background-color: #dedede;
+    border: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.carousel-button:hover {
+    background-color: #9f9f9f;
 }
