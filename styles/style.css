@@ -134,7 +134,7 @@ header {
 
 .latest-blogs {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
 }
 
@@ -176,12 +176,13 @@ header {
 .carousel {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .carousel-list {
     display: flex;
-    gap: 20px;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .carousel-button {
