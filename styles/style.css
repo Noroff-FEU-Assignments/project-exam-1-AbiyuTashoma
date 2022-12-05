@@ -239,3 +239,31 @@ header {
 .icon:hover {
     cursor: pointer;
 }
+
+/* ====================== contact page ======================= */
+
+.input-fields {
+    font-size: var(--li-font-size);
+    border: var(--hover-color) solid thin;
+    border-radius: 5px;
+    padding: 3px 7px;
+    margin: 5px;
+}
+
+.inter-margin {
+    margin-bottom: 10px;
+}
+
+.message-field {
+    min-width: 400px;
+    height: 100px;
+}
+
+.submit-button {
+    font-size: larger;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+}
