@@ -4,6 +4,7 @@
     --logo_color: #2c2c2c;
     --menu-color: #505050;
     --hover-color: #2c2c2c;
+    --cta-hover-color: #10490b;
     --menu-background-color: #ccd9e7;
 }
 
@@ -131,6 +132,13 @@ header {
     padding: 10px 30px;
 }
 
+.landing-cta:hover,
+.element-cta:hover,
+.submit-button:hover {
+    background-color: var(--cta-hover-color);
+    cursor: pointer;
+}
+
 /* ============= latest blogs ================ */
 
 .latest-blogs {
@@ -233,7 +241,9 @@ header {
 }
 
 .icon {
-    width: 2em;
+    width: 2.2em;
+    border: ivory solid thin;
+    border-radius: 5px;
 }
 
 .icon:hover {
@@ -266,4 +276,5 @@ header {
     border-radius: 5px;
     color: white;
     background-color: green;
+    margin-left: 6px;
 }
