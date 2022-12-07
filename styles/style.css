@@ -130,6 +130,8 @@ header {
     font-size: xx-large;
     background-color: green;
     padding: 10px 30px;
+    transition-property: all;
+    transition-duration: 0.5s;
 }
 
 .landing-cta:hover,
@@ -244,10 +246,13 @@ header {
     width: 2.2em;
     border: ivory solid thin;
     border-radius: 5px;
+    transition-property: all;
+    transition-duration: 0.5s;
 }
 
 .icon:hover {
     cursor: pointer;
+    background-color: var(--menu-color);
 }
 
 /* ====================== contact page ======================= */
@@ -277,4 +282,6 @@ header {
     color: white;
     background-color: green;
     margin-left: 6px;
+    transition-property: all;
+    transition-duration: 0.5s;
 }
