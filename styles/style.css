@@ -23,21 +23,19 @@ header {
     border-bottom: solid var(--menu-background-color) thin;
 }
 
-@font-face {
-    font-family: Arizona-Regular;
-    src: url("../font/Arizonia/Arizonia-Regular.ttf");
-}
-
 .logo {
     text-align: center;
     margin-bottom: 35px;
 }
 
 .logo-a {
-    font-family: Arizona-Regular;
     font-size: 2.5em;
     color: var(--logo_color);
     text-decoration: none;
+}
+
+.logo-image {
+    width: 200px;
 }
 
 .menu {
@@ -284,4 +282,8 @@ header {
     margin-left: 6px;
     transition-property: all;
     transition-duration: 0.5s;
+}
+
+figure {
+    text-align: center;
 }

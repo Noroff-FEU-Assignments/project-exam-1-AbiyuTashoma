@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
-    <!-- <link rel="im" href="font/Arizonia/Arizonia-Regular.ttf"> -->
     <link href="styles/style.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html" class="logo-a">- My Blog -</a>
+            <a href="index.html" class="logo-a">
+                <img src="https://www.myblog.casa/wp-content/uploads/2022/12/myblog.png" class="logo-image" alt="myblog">
+            </a>
         </div>
         <div class="menu">
             <label for="hamb-menu" class="ham-menu-label">
@@ -34,6 +35,7 @@
     <main>
         <section class="main-section">
             <h1>Blog</h1>
+            <div class="blogs"></div>
         </section>
     </main>
     <footer>
@@ -53,6 +55,9 @@
             </div>
         </section>
     </footer>
+
+    <script src="js/components/displayPosts.js"></script>
+    <script src="js/blogs.js"></script>
     
 </body>
 </html>
