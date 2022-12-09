@@ -192,6 +192,7 @@ header {
     display: flex;
     width: 100%;
     justify-content: space-around;
+    gap: 10px;
 }
 
 .carousel-button {
@@ -205,6 +206,18 @@ header {
 
 .carousel-button:hover {
     background-color: #9f9f9f;
+}
+
+.previuos {
+    margin-right: 15px;
+}
+
+.next {
+    margin-left: 15px;
+}
+
+.more-link {
+    display: none;
 }
 
 /* ====================== footer ======================= */

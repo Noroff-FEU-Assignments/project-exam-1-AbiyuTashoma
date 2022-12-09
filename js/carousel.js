@@ -2,40 +2,50 @@ const carouselListContainer = document.querySelector(".carousel-list");
 const prevContainer = document.querySelector(".previuos");
 const nextContainer = document.querySelector(".next");
 
-const list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 let startIndex = 0;
-let endIndex = list.length;
+let endIndex = 0;
 
-function display () {
+url = "https://www.myblog.casa/wp-json/wp/v2/posts";
+
+function display (posts) {
     let html = "";
 
     for (let i = 0; i < 4; i++) {
 
-        html += `<p>${list[i]}</p>`;
+        html += `<div>
+                    <p>${posts[i]["title"]["rendered"]}</p>
+                    <div class="elementcta-div">
+                        <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
+                    </div>
+                </div>`;
 
         startIndex += 1;
         endIndex -= 1;
     }
 
-    carouselListContainer.innerHTML = html;
+    return html;
 }
 
-function displayNext (start = 0) {
+function displayNext (nPosts, start = 0) {
     let html = "";
 
     for (let i = 0; i < 4; i++) {
 
-        html += `<p>${list[start]}</p>`;
+        html += `<div>
+                    <p>${nPosts[start]["title"]["rendered"]}</p>
+                    <div class="elementcta-div">
+                        <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
+                    </div>
+                </div>`;
 
         start += 1;
         endIndex += 1;
 
-        if (endIndex >= list.length) {
+        if (endIndex >= nPosts.length) {
             endIndex = 0;
         }
 
-        if (start >= list.length) {
+        if (start >= nPosts.length) {
             start = 0;
         }
         
@@ -43,44 +53,84 @@ function displayNext (start = 0) {
 
     startIndex = start;
 
-    carouselListContainer.innerHTML = html;
+    return html;
 }
 
-function displayPreviuos (pStart = 0) {
+function displayPreviuos (pPosts, pStart = 0) {
     let html = "";
 
     for (let i = 0; i < 4; i++) {
 
-        html += `<p>${list[pStart]}</p>`;
+        html += `<div>
+                    <p>${pPosts[pStart]["title"]["rendered"]}</p>
+                    <div class="elementcta-div">
+                        <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
+                    </div>
+                </div>`;
 
         pStart += 1;
         endIndex -= 1;
         startIndex -= 1;
         
         if (startIndex < 0) {
-            startIndex = list.length -1;
+            startIndex = pPosts.length -1;
         }
 
-        if (pStart >= list.length) {
+        if (pStart >= pPosts.length) {
             pStart = 0;
         }
 
         if (endIndex < 0) {
-            endIndex = list.length - 1;
+            endIndex = pPosts.length - 1;
         }
     }
 
-    carouselListContainer.innerHTML = html;
+    return html;
 }
 
-function next() {
-    displayNext(startIndex);
+async function getLatestPosts() {
+    try {
+        const lResponse = await fetch(url);
+        const latestPosts = await lResponse.json();
+        endIndex = latestPosts.length;
+
+        carouselListContainer.innerHTML = display(latestPosts);
+    }
+
+    catch (error) {
+        console.log(error);
+    }
+
 }
 
-function previuos() {
-    displayPreviuos(endIndex);
+async function next() {
+    try {
+        const nResponse = await fetch(url);
+        const nextPosts = await nResponse.json();
+
+        carouselListContainer.innerHTML = displayNext(nextPosts, startIndex);
+    }
+
+    catch (error) {
+        console.log(error);
+    }
+    
 }
 
-display();
+async function previuos() {
+    try {
+        const pResponse = await fetch(url);
+        const prevPosts = await pResponse.json();
+
+        carouselListContainer.innerHTML = displayPreviuos(prevPosts, endIndex);
+    }
+
+    catch (error) {
+        console.log(error);
+    }
+}
+
+getLatestPosts();
+
 nextContainer.addEventListener("click", next);
 prevContainer.addEventListener("click", previuos);
