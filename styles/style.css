@@ -178,7 +178,7 @@ header {
 }
 
 .element-cta {
-    font-size: smaller;
+    font-size: large;
 }
 
 /* ============= carousel ================ */
@@ -223,7 +223,7 @@ header {
 
 .post-title {
     font-weight: 600;
-    font-size: larger;
+    font-size: x-large;
     margin: 0;
 }
 
@@ -231,9 +231,20 @@ header {
     margin: 0;
 }
 
+.post-excerpt{
+    font-size: large;
+}
+
 .post {
     background-color: gainsboro;
     padding: 10px;
+}
+
+/* ====================== Blog post ======================= */
+
+.content-section {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* ====================== footer ======================= */

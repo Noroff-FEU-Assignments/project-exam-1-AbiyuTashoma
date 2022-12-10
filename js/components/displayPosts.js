@@ -7,7 +7,7 @@ function displayPosts(postList) {
     //             <div>`;
     // }
 
-    html += `<div class="post">
+    html += `<div class="blog-post">
                     ${postList[0]["content"]["rendered"]}
                 <div>`;
 
