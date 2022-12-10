@@ -229,6 +229,8 @@ header {
 
 .post-date {
     margin: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
 }
 
 .post-excerpt {
@@ -236,15 +238,18 @@ header {
 }
 
 .post {
-    background-color: gainsboro;
+    background-color: aliceblue;
     padding: 10px;
+    outline: solid thin;
 }
 
 /* ====================== Blog post ======================= */
 
 .content-section {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
+    background-color: aliceblue;
+    padding: 25px 50px;
 }
 
 .blog-post p {
@@ -316,6 +321,7 @@ figure {
     border-radius: 5px;
     padding: 3px 7px;
     margin: 5px;
+    background-color: aliceblue;
 }
 
 .inter-margin {
