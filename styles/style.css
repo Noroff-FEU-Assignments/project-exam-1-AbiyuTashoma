@@ -206,6 +206,7 @@ header {
 
 .carousel-button:hover {
     background-color: #9f9f9f;
+    cursor: pointer;
 }
 
 .previuos {
@@ -228,6 +229,11 @@ header {
 
 .post-date {
     margin: 0;
+}
+
+.post {
+    background-color: gainsboro;
+    padding: 10px;
 }
 
 /* ====================== footer ======================= */

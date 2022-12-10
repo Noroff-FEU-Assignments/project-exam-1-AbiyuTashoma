@@ -14,9 +14,10 @@ function display (posts) {
 
         const fullDate = posts[i]["date"];
         const postDate = fullDate.slice(0, fullDate.indexOf('T'));
-        html += `<div>
+        html += `<div class="post">
                     <p class="post-title">${posts[i]["title"]["rendered"]}</p>
                     <p class="post-date">${postDate}</p>
+                    <p class="post-title">${posts[i]["excerpt"]["rendered"]}</p>
                     <div class="elementcta-div">
                         <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
                     </div>
@@ -36,9 +37,10 @@ function displayNext (nPosts, start = 0) {
 
         const fullDate = nPosts[start]["date"];
         const postDate = fullDate.slice(0, fullDate.indexOf('T'));
-        html += `<div>
+        html += `<div class="post">
                     <p class="post-title">${nPosts[start]["title"]["rendered"]}</p>
                     <p class="post-date">${postDate}</p>
+                    <p class="post-title">${nPosts[start]["excerpt"]["rendered"]}</p>
                     <div class="elementcta-div">
                         <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
                     </div>
@@ -69,9 +71,10 @@ function displayPreviuos (pPosts, pStart = 0) {
 
         const fullDate = pPosts[pStart]["date"];
         const postDate = fullDate.slice(0, fullDate.indexOf('T'));
-        html += `<div>
+        html += `<div class="post">
                     <p class="post-title">${pPosts[pStart]["title"]["rendered"]}</p>
                     <p class="post-date">${postDate}</p>
+                    <p class="post-title">${pPosts[pStart]["excerpt"]["rendered"]}</p>
                     <div class="elementcta-div">
                         <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
                     </div>
