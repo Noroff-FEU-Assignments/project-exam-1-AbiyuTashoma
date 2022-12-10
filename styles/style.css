@@ -231,7 +231,7 @@ header {
     margin: 0;
 }
 
-.post-excerpt{
+.post-excerpt {
     font-size: large;
 }
 
@@ -245,6 +245,21 @@ header {
 .content-section {
     max-width: 800px;
     margin: 0 auto;
+}
+
+.blog-post p {
+    font-size: large;
+    word-spacing: 5px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
 }
 
 /* ====================== footer ======================= */
@@ -322,8 +337,4 @@ header {
     margin-left: 6px;
     transition-property: all;
     transition-duration: 0.5s;
-}
-
-figure {
-    text-align: center;
 }
