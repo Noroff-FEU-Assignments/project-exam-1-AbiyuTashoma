@@ -12,8 +12,11 @@ function display (posts) {
 
     for (let i = 0; i < 4; i++) {
 
+        const fullDate = posts[i]["date"];
+        const postDate = fullDate.slice(0, fullDate.indexOf('T'));
         html += `<div>
-                    <p>${posts[i]["title"]["rendered"]}</p>
+                    <p class="post-title">${posts[i]["title"]["rendered"]}</p>
+                    <p class="post-date">${postDate}</p>
                     <div class="elementcta-div">
                         <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
                     </div>
@@ -31,8 +34,11 @@ function displayNext (nPosts, start = 0) {
 
     for (let i = 0; i < 4; i++) {
 
+        const fullDate = nPosts[start]["date"];
+        const postDate = fullDate.slice(0, fullDate.indexOf('T'));
         html += `<div>
-                    <p>${nPosts[start]["title"]["rendered"]}</p>
+                    <p class="post-title">${nPosts[start]["title"]["rendered"]}</p>
+                    <p class="post-date">${postDate}</p>
                     <div class="elementcta-div">
                         <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
                     </div>
@@ -57,12 +63,15 @@ function displayNext (nPosts, start = 0) {
 }
 
 function displayPreviuos (pPosts, pStart = 0) {
-    let html = "";
+        let html = "";
 
     for (let i = 0; i < 4; i++) {
 
+        const fullDate = pPosts[pStart]["date"];
+        const postDate = fullDate.slice(0, fullDate.indexOf('T'));
         html += `<div>
-                    <p>${pPosts[pStart]["title"]["rendered"]}</p>
+                    <p class="post-title">${pPosts[pStart]["title"]["rendered"]}</p>
+                    <p class="post-date">${postDate}</p>
                     <div class="elementcta-div">
                         <a href="blogs.html" title="view blogs" class="element-cta landing-cta">View Blog</a>
                     </div>
@@ -95,6 +104,7 @@ async function getLatestPosts() {
         endIndex = latestPosts.length;
 
         carouselListContainer.innerHTML = display(latestPosts);
+        console.log(latestPosts);
     }
 
     catch (error) {

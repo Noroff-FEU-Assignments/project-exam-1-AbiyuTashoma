@@ -220,6 +220,16 @@ header {
     display: none;
 }
 
+.post-title {
+    font-weight: 600;
+    font-size: larger;
+    margin: 0;
+}
+
+.post-date {
+    margin: 0;
+}
+
 /* ====================== footer ======================= */
 .footer-section {
     color: white;
