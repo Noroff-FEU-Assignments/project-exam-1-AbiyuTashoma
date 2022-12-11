@@ -6,17 +6,19 @@ async function getPosts() {
     const response = await fetch(url);
     const posts = await response.json();
 
-    console.log(posts[0]);
     blogsContainer.innerHTML = displayPosts(posts);
 
-    const blogImage = document.querySelectorAll("figure img");
-    console.log(blogImage);
+    // Single post display
+    // blogsContainer.innerHTML = posts[0]["content"]["rendered"];
 
-    for (let j = 0; j < blogImage.length; j++) {
-        blogImage[j].onclick = function () {
-            console.log("image " + j + " clicked");
-        }
-    }
+    // const blogImage = document.querySelectorAll("figure img");
+    // console.log(blogImage);
+
+    // for (let j = 0; j < blogImage.length; j++) {
+    //     blogImage[j].onclick = function () {
+    //         console.log("image " + j + " clicked");
+    //     }
+    // }
 
 }
 

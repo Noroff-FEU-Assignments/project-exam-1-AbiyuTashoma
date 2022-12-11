@@ -12,10 +12,9 @@ function display (posts) {
 
     for (let i = 0; i < 4; i++) {
 
-        const fullDate = posts[i]["date"];
-        const postDate = fullDate.slice(0, fullDate.indexOf('T'));
-        const fullExcerpt = posts[i]["excerpt"]["rendered"];
-        const excerpt = fullExcerpt.slice(fullExcerpt.indexOf('>') + 1, fullExcerpt.indexOf('</'));
+        const postDate = truncate (posts[i]["date"], 0, posts[i]["date"].indexOf('T'));
+        const rawExcerpt = posts[i]["excerpt"]["rendered"];
+        const excerpt = truncate (rawExcerpt, rawExcerpt.indexOf('>') + 1, rawExcerpt.indexOf('</'))
         html += `<div class="post">
                     <p class="post-title">${posts[i]["title"]["rendered"]}</p>
                     <p class="post-date">${postDate}</p>
@@ -37,10 +36,10 @@ function displayNext (nPosts, start = 0) {
 
     for (let i = 0; i < 4; i++) {
 
-        const fullDate = nPosts[start]["date"];
-        const postDate = fullDate.slice(0, fullDate.indexOf('T'));
-        const fullExcerpt = nPosts[start]["excerpt"]["rendered"];
-        const excerpt = fullExcerpt.slice(fullExcerpt.indexOf('>') + 1, fullExcerpt.indexOf('</'));
+        const postDate = truncate (nPosts[start]["date"], 0, nPosts[start]["date"].indexOf('T'));
+        const rawExcerpt = nPosts[start]["excerpt"]["rendered"];
+        const excerpt = truncate (rawExcerpt, rawExcerpt.indexOf('>') + 1, rawExcerpt.indexOf('</'))
+
         html += `<div class="post">
                     <p class="post-title">${nPosts[start]["title"]["rendered"]}</p>
                     <p class="post-date">${postDate}</p>
@@ -73,10 +72,10 @@ function displayPreviuos (pPosts, pStart = 0) {
 
     for (let i = 0; i < 4; i++) {
 
-        const fullDate = pPosts[pStart]["date"];
-        const postDate = fullDate.slice(0, fullDate.indexOf('T'));
-        const fullExcerpt = pPosts[pStart]["excerpt"]["rendered"];
-        const excerpt = fullExcerpt.slice(fullExcerpt.indexOf('>') + 1, fullExcerpt.indexOf('</'));
+        const postDate = truncate (pPosts[pStart]["date"], 0, pPosts[pStart]["date"].indexOf('T'));
+        const rawExcerpt = pPosts[pStart]["excerpt"]["rendered"];
+        const excerpt = truncate (rawExcerpt, rawExcerpt.indexOf('>') + 1, rawExcerpt.indexOf('</'))
+
         html += `<div class="post">
                     <p class="post-title">${pPosts[pStart]["title"]["rendered"]}</p>
                     <p class="post-date">${postDate}</p>

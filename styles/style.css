@@ -231,7 +231,19 @@ header {
 .content-section {
     max-width: 850px;
     margin: 0 auto;
-    padding: 0 25px 50px;
+    padding-bottom:  50px;
+}
+
+.blog-post {
+    background-color: var(--menu-background-color);
+    padding: 10px;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.blog-post-image {
+    width: 35%;
+    height: auto;
 }
 
 .blog-post p {
@@ -239,10 +251,11 @@ header {
     word-spacing: 5px;
 }
 
-.blog-post img {
+/* .blog-post img,
+.blogs img {
     width: 100%;
     height: auto;
-}
+} */
 
 figure {
     text-align: center;
