@@ -187,8 +187,6 @@ header {
     cursor: pointer;
 }
 
-
-
 .previuos {
     margin-right: 15px;
 }
@@ -257,12 +255,10 @@ header {
     word-spacing: 5px;
 }
 
-/* see prev next for more */
+/* ==== see prev next for more ====*/
 .view-more {
     text-align: right;
 }
-
-
 
 .view-more-button {
     font-size: large;
@@ -279,16 +275,6 @@ header {
     border: none;
 }
 
-/* .blog-post img,
-.blogs img {
-    width: 100%;
-    height: auto;
-} */
-
-figure {
-    text-align: center;
-    margin: 0;
-}
 
 /* ====================== footer ======================= */
 .footer-section {
@@ -366,4 +352,19 @@ figure {
     margin-left: 6px;
     transition-property: all;
     transition-duration: 0.5s;
+}
+
+/* ====================== contact page ======================= */
+
+.a-blog img {
+    width: 100%;
+    height: auto;
+}
+
+.a-blog figure {
+    margin: 0;
+}
+
+.wp-element-caption {
+    text-align: center;
 }

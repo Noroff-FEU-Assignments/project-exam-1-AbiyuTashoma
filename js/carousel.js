@@ -20,7 +20,7 @@ function display (posts) {
                     <p class="post-date">${postDate}</p>
                     <p class="post-excerpt">${excerpt}</p>
                     <div class="elementcta-div">
-                        <a href="blogs.html" title="read" class="element-cta landing-cta">Read</a>
+                        <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="element-cta landing-cta">Read</a>
                     </div>
                 </div>`;
 
@@ -45,7 +45,7 @@ function displayNext (nPosts, start = 0) {
                     <p class="post-date">${postDate}</p>
                     <p class="post-excerpt">${excerpt}</p>
                     <div class="elementcta-div">
-                        <a href="blogs.html" title="read" class="element-cta landing-cta">Read</a>
+                        <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="element-cta landing-cta">Read</a>
                     </div>
                 </div>`;
 
@@ -81,7 +81,7 @@ function displayPreviuos (pPosts, pStart = 0) {
                     <p class="post-date">${postDate}</p>
                     <p class="post-excerpt">${excerpt}</p>
                     <div class="elementcta-div">
-                        <a href="blogs.html" title="read" class="element-cta landing-cta">Read</a>
+                        <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="element-cta landing-cta">Read</a>
                     </div>
                 </div>`;
 

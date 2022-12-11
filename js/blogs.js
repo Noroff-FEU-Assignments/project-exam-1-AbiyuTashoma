@@ -16,27 +16,15 @@ async function getPosts() {
         blogsContainer.innerHTML = error;
     }
 
-    // Single post display
-    // blogsContainer.innerHTML = posts[0]["content"]["rendered"];
-
-    // const blogImage = document.querySelectorAll("figure img");
-    // console.log(blogImage);
-
-    // for (let j = 0; j < blogImage.length; j++) {
-    //     blogImage[j].onclick = function () {
-    //         console.log("image " + j + " clicked");
-    //     }
-    // }
-
 }
 
 async function getMorePosts() {
     try {
         const mResponse = await fetch(offsetURL);
         const mPosts = await mResponse.json();
-    
+
         blogsContainer.innerHTML += displayPosts(mPosts);
-    
+
         viewMoreContainer.disabled = "true";
         viewMoreContainer.className = "view-more-disabled";
     }
