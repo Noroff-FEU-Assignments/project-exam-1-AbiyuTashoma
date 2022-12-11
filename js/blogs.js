@@ -1,12 +1,20 @@
 const blogsContainer = document.querySelector(".blogs");
+const viewMoreContainer = document.querySelector(".view-more-button");
 
-url = "https://www.myblog.casa/wp-json/wp/v2/posts";
+const url = "https://www.myblog.casa/wp-json/wp/v2/posts";
+const offsetURL = "https://www.myblog.casa/wp-json/wp/v2/posts/?offset=10";
 
 async function getPosts() {
-    const response = await fetch(url);
-    const posts = await response.json();
-
-    blogsContainer.innerHTML = displayPosts(posts);
+    try {
+        const response = await fetch(url);
+        const posts = await response.json();
+    
+        blogsContainer.innerHTML = displayPosts(posts);
+    }
+    
+    catch (error) {
+        blogsContainer.innerHTML = error;
+    }
 
     // Single post display
     // blogsContainer.innerHTML = posts[0]["content"]["rendered"];
@@ -22,4 +30,23 @@ async function getPosts() {
 
 }
 
+async function getMorePosts() {
+    try {
+        const mResponse = await fetch(offsetURL);
+        const mPosts = await mResponse.json();
+    
+        blogsContainer.innerHTML += displayPosts(mPosts);
+    
+        viewMoreContainer.disabled = "true";
+        viewMoreContainer.className = "view-more-disabled";
+    }
+    
+    catch (error) {
+        blogsContainer.innerHTML += error;
+    }
+}
+
+
 getPosts();
+
+viewMoreContainer.addEventListener("click", getMorePosts)

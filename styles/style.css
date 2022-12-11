@@ -187,6 +187,8 @@ header {
     cursor: pointer;
 }
 
+
+
 .previuos {
     margin-right: 15px;
 }
@@ -260,11 +262,21 @@ header {
     text-align: right;
 }
 
+
+
 .view-more-button {
     font-size: large;
     height: auto;
     padding: 10px;
     border-radius: 5px;
+}
+
+.view-more-disabled {
+    font-size: large;
+    background-color: #dedede;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
 /* .blog-post img,
