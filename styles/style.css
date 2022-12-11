@@ -171,7 +171,8 @@ header {
     gap: 10px;
 }
 
-.carousel-button {
+.carousel-button,
+.view-more-button {
     height: 130px;
     font-size: xx-large;
     background-color: #dedede;
@@ -180,7 +181,8 @@ header {
     transition-duration: 0.5s;
 }
 
-.carousel-button:hover {
+.carousel-button:hover,
+.view-more-button:hover {
     background-color: #9f9f9f;
     cursor: pointer;
 }
@@ -251,6 +253,18 @@ header {
 .blog-post p {
     font-size: large;
     word-spacing: 5px;
+}
+
+/* see prev next for more */
+.view-more {
+    text-align: right;
+}
+
+.view-more-button {
+    font-size: large;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* .blog-post img,
