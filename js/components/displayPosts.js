@@ -12,11 +12,13 @@ function displayPosts(postList) {
                         <p class="post-title">${postList[i]["title"]["rendered"]}</p>
                         <p class="post-date">${postDate}</p>
                         ${postList[i]["excerpt"]["rendered"]}
+                        <div class="elementcta-div">
+                            <a href="blogs.html" title="read" class="element-cta landing-cta">Read</a>
+                        </div>
                     </div>
                 </div>`;
-
-                // console.log(postList[i]["excerpt"]["rendered"]);
     }
+
     // single post
     // html += `<div class="blog-post">
     //                 ${postList[0]["content"]["rendered"]}

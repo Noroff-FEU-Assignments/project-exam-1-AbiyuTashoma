@@ -236,9 +236,11 @@ header {
 
 .blog-post {
     background-color: var(--menu-background-color);
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 25px;
     display: flex;
+    border-radius: 10px;
+    gap: 25px;
 }
 
 .blog-post-image {
