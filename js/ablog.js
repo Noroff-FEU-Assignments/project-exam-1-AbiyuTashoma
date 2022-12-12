@@ -1,4 +1,5 @@
 aBlogContainer = document.querySelector(".a-blog");
+aBlogTitleContainer = document.querySelector(".ablog-title");
 
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
@@ -14,8 +15,12 @@ async function getAPost () {
         aPost = await aResponse.json();
 
         aBlogContainer.innerHTML = aPost["content"]["rendered"];
+        document.title += ` | ${aPost["title"]["rendered"]}`;
+        aBlogTitleContainer.innerHTML = aPost["title"]["rendered"];
+
+        console.log(aPost);
         const blogImage = document.querySelectorAll("figure img");
-        console.log(blogImage);
+        // console.log(blogImage);
 
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
