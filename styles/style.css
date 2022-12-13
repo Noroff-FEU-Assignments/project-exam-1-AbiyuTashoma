@@ -427,8 +427,17 @@ header {
     background-color: var(--hover-color);
 }
 
+.modal-img-div {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
 #image {
-    display: block;
-    width: 70%;
-    max-width: 800px;
+    /* display: block; */
+    /* width: 70%; */
+    /* max-width: 800px; */
+    /* height: auto; */
 }

@@ -31,7 +31,6 @@ async function getAPost () {
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
                 console.log("image " + j + " clicked");
-                console.log(window.scrollY);
                 modalContainer.style.display = "block";
                 modalContainer.style.top = `${window.scrollY}px`;
                 console.log(`${window.scrollY}px`);
