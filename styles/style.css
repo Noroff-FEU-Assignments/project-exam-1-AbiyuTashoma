@@ -1,9 +1,9 @@
 /* =========== Global variables ============ */
 
 :root {
-    --logo_color: #2c2c2c;
     --menu-color: #505050;
     --hover-color: #2c2c2c;
+    --text-color:#2c2c2c;
     --cta-hover-color: #10490b;
     --menu-background-color: #ccd9e7;
     --body-background-color: #f7f7f7;
@@ -29,12 +29,6 @@ header {
 .logo {
     text-align: center;
     margin-bottom: 35px;
-}
-
-.logo-a {
-    font-size: 2.5em;
-    color: var(--logo_color);
-    text-decoration: none;
 }
 
 .logo-image {
@@ -197,10 +191,9 @@ header {
     margin-left: 15px;
 }
 
-.ghost-link,
-.ghost-link-blog {
+.ghost-link {
     text-decoration: none;
-    color: var(--hover-color);
+    color: var(--text-color);
     padding: 10px 10px 0;
 }
 
@@ -234,7 +227,9 @@ header {
 }
 
 .elementcta-div {
-    margin: 20px auto;
+    /* margin: 20px auto; */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .element-cta {
@@ -261,7 +256,10 @@ header {
 }
 
 .ghost-link-blog {
-    padding: 20px 20px 0;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 10px;
 }
 
 .blog-post {
@@ -405,7 +403,7 @@ header {
 .indicator-link {
     text-decoration: none;
     font-weight: bold;
-    color: var(--logo_color);
+    color: var(--text-color);
 }
 
 .indicator-link:hover {
