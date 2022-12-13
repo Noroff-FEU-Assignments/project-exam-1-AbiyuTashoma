@@ -26,12 +26,16 @@ async function getAPost () {
 
         console.log(aPost);
         const blogImage = document.querySelectorAll("figure img");
-        // console.log(blogImage);
+        console.log(blogImage);
 
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
                 console.log("image " + j + " clicked");
             }
+
+            blogImage[j]["className"] += " overlay"
+
+            console.log(blogImage[j]["className"]);
         }
     
     }
