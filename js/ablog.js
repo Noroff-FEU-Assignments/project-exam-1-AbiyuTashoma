@@ -1,5 +1,7 @@
-aBlogContainer = document.querySelector(".a-blog");
-aBlogTitleContainer = document.querySelector(".ablog-title");
+const aBlogContainer = document.querySelector(".a-blog");
+const aBlogTitleContainer = document.querySelector(".ablog-title");
+const modalContainer = document.querySelector(".modal-container");
+const modalImage = document.querySelector("#image");
 
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
@@ -16,7 +18,6 @@ async function getAPost () {
 
         const aPostDate = truncate (aPost["date"], 0, aPost["date"].indexOf('T'));
         
-                            
         aBlogContainer.innerHTML = `<h1 class="ablog-h1">${aPost["title"]["rendered"]}</h1>
                                     <p class="post-date">${aPostDate}</p>
                                     ${aPost["content"]["rendered"]}`;
@@ -24,18 +25,21 @@ async function getAPost () {
         document.title += ` | ${aPost["title"]["rendered"]}`;
         aBlogTitleContainer.innerHTML = aPost["title"]["rendered"];
 
-        console.log(aPost);
         const blogImage = document.querySelectorAll("figure img");
         console.log(blogImage);
+
+        // for (let k = 0; k < blogImage.length; k++) {
+        //     blogImage[k]["className"] += " modal-image";
+        // }
 
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
                 console.log("image " + j + " clicked");
+                modalContainer.style.display = "block";
+                modalImage.src = blogImage[j]["src"];
             }
 
-            blogImage[j]["className"] += " overlay"
-
-            console.log(blogImage[j]["className"]);
+            // console.log(blogImage[j]["className"]);
         }
     
     }
