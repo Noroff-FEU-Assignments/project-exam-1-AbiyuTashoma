@@ -14,7 +14,13 @@ async function getAPost () {
         aResponse = await fetch(newURL);
         aPost = await aResponse.json();
 
-        aBlogContainer.innerHTML = aPost["content"]["rendered"];
+        const aPostDate = truncate (aPost["date"], 0, aPost["date"].indexOf('T'));
+        
+                            
+        aBlogContainer.innerHTML = `<h1 class="ablog-h1">${aPost["title"]["rendered"]}</h1>
+                                    <p class="post-date">${aPostDate}</p>
+                                    ${aPost["content"]["rendered"]}`;
+
         document.title += ` | ${aPost["title"]["rendered"]}`;
         aBlogTitleContainer.innerHTML = aPost["title"]["rendered"];
 
@@ -31,7 +37,7 @@ async function getAPost () {
     }
 
     catch (error) {
-
+        aBlogContainer.innerHTML = error;
     }
 }
 

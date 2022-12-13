@@ -45,20 +45,22 @@ function displayNext (nPosts, start = 0) {
 
         const postDate = truncate (nPosts[start]["date"], 0, nPosts[start]["date"].indexOf('T'));
         const rawExcerpt = nPosts[start]["excerpt"]["rendered"];
-        const excerpt = truncate (rawExcerpt, rawExcerpt.indexOf('>') + 1, rawExcerpt.indexOf('</'))
+        const excerpt = truncate (rawExcerpt, rawExcerpt.indexOf('>') + 1, rawExcerpt.indexOf('</'));
         const imageSrc = getImageSource(nPosts[start]["content"]["rendered"]);
 
         html += `<div class="post">
                     <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link">
                         <img src=${imageSrc[0]} class="blog-post-image">
                     </a>
-                    <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link">
-                        <p class="post-title">${nPosts[start]["title"]["rendered"]}</p>
-                        <p class="post-date">${postDate}</p>
-                        <p class="post-excerpt">${excerpt}</p>
-                    </a>
-                    <div class="elementcta-div">
-                        <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                    <div>
+                        <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link">
+                            <p class="post-title">${nPosts[start]["title"]["rendered"]}</p>
+                            <p class="post-date">${postDate}</p>
+                            <p class="post-excerpt">${excerpt}</p>
+                        </a>
+                        <div class="elementcta-div">
+                            <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                        </div>
                     </div>
                 </div>`;
 
