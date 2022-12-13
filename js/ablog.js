@@ -28,14 +28,13 @@ async function getAPost () {
         const blogImage = document.querySelectorAll("figure img");
         console.log(blogImage);
 
-        // for (let k = 0; k < blogImage.length; k++) {
-        //     blogImage[k]["className"] += " modal-image";
-        // }
-
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
                 console.log("image " + j + " clicked");
+                console.log(window.scrollY);
                 modalContainer.style.display = "block";
+                modalContainer.style.top = `${window.scrollY}px`;
+                console.log(`${window.scrollY}px`);
                 modalImage.src = blogImage[j]["src"];
             }
 
@@ -50,4 +49,7 @@ async function getAPost () {
 }
 
 getAPost ();
-    
+
+modalContainer.onclick = function () {
+    modalContainer.style.display = "none";
+}

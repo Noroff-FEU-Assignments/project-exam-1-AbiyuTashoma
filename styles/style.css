@@ -420,7 +420,7 @@ header {
 .modal-container {
     display: none;
     position: absolute;
-    top: 0;
+    top: 304;
     left: 0;
     width: 100%;
     height: 100%;
