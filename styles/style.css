@@ -387,6 +387,7 @@ header {
 
 .a-blog figure {
     margin: 0;
+    text-align: center;
 }
 
 .wp-element-caption {
@@ -438,6 +439,6 @@ header {
 #image {
     /* display: block; */
     /* width: 70%; */
-    /* max-width: 800px; */
+    max-width: 800px;
     /* height: auto; */
 }
