@@ -155,8 +155,8 @@ header {
 }
 
 .carousel-list {
-    display: flex;
-    /* width: 100%; */
+    display: block;
+    width: 100%;
     /* justify-content: space-around; */
     gap: 10px;
 }
@@ -192,10 +192,12 @@ header {
     margin-left: 15px;
 }
 
-.ghost-link {
+.ghost-link-post,
+.ghost-link-blog {
     text-decoration: none;
     color: var(--text-color);
-    padding: 10px 10px 0;
+    display: block;
+    padding: 10px;
 }
 
 .post {
@@ -349,12 +351,13 @@ header {
 /* ====================== contact page ======================= */
 
 .input-fields {
-    font-size: var(--li-font-size);
+    font-size: 1em;
+    font-family: verdana, sans-serif;
     border: var(--hover-color) solid thin;
     border-radius: 5px;
     padding: 3px 7px;
     margin: 5px;
-    background-color: var(--body-background-color);
+    /* background-color: var(--body-background-color); */
 }
 
 .inter-margin {
@@ -376,6 +379,48 @@ header {
     margin-left: 6px;
     transition-property: all;
     transition-duration: 0.5s;
+}
+
+/* ================== Feedback and error message ======================= */
+.loading {
+    border: 5px dotted var(--text-color);
+    border-radius: 50%;
+    border-right: 0;
+    border-top: 0;
+    width: 75px;
+    height: 75px;
+    margin: 0 50%;
+    animation: loading 2s linear infinite;
+}
+  
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.note {
+    color: red;
+    font-size: smaller;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.message-area {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.success {
+    background-color: rgb(128, 203, 128);
+ }
+  
+.error {
+    background-color: rgb(214, 138, 138);
 }
 
 /* ====================== a blog page ======================= */

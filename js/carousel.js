@@ -1,3 +1,5 @@
+const carouselContainer = document.querySelector(".carousel");
+const loadingContainer = document.querySelector(".loading");
 const carouselListContainer = document.querySelector(".carousel-list");
 const prevContainer = document.querySelector(".previuos");
 const nextContainer = document.querySelector(".next");
@@ -18,16 +20,18 @@ function display (posts) {
         const imageSrc = getImageSource(posts[i]["content"]["rendered"]);
 
     html += `   <div class="post">
-                    <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link">
+                    <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link-post">
                         <img src=${imageSrc[0]} class="blog-post-image">
                     </a>
-                    <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link">
-                        <p class="post-title">${posts[i]["title"]["rendered"]}</p>
-                        <p class="post-date">${postDate}</p>
-                        <p class="post-excerpt">${excerpt}</p>
-                    </a>
-                    <div class="elementcta-div">
-                        <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                    <div>
+                        <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link-post">
+                            <p class="post-title">${posts[i]["title"]["rendered"]}</p>
+                            <p class="post-date">${postDate}</p>
+                            <p class="post-excerpt">${excerpt}</p>
+                        </a>
+                        <div class="elementcta-div">
+                            <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                        </div>
                     </div>
                 </div>`;
 
@@ -49,11 +53,11 @@ function displayNext (nPosts, start = 0) {
         const imageSrc = getImageSource(nPosts[start]["content"]["rendered"]);
 
         html += `<div class="post">
-                    <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link">
+                    <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link-post">
                         <img src=${imageSrc[0]} class="blog-post-image">
                     </a>
                     <div>
-                        <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link">
+                        <a href="ablog.html?postID=${nPosts[start]["id"]}" title="read" class="ghost-link-post">
                             <p class="post-title">${nPosts[start]["title"]["rendered"]}</p>
                             <p class="post-date">${postDate}</p>
                             <p class="post-excerpt">${excerpt}</p>
@@ -93,16 +97,18 @@ function displayPreviuos (pPosts, pStart = 0) {
         const imageSrc = getImageSource(pPosts[pStart]["content"]["rendered"]);
 
         html += `<div class="post">
-                    <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="ghost-link">
+                    <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="ghost-link-post">
                         <img src=${imageSrc[0]} class="blog-post-image">
                     </a>
-                    <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="ghost-link">
-                        <p class="post-title">${pPosts[pStart]["title"]["rendered"]}</p>
-                        <p class="post-date">${postDate}</p>
-                        <p class="post-excerpt">${excerpt}</p>
-                    </a>
-                    <div class="elementcta-div">
-                        <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                    <div>
+                        <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="ghost-link-post">
+                            <p class="post-title">${pPosts[pStart]["title"]["rendered"]}</p>
+                            <p class="post-date">${postDate}</p>
+                            <p class="post-excerpt">${excerpt}</p>
+                        </a>
+                        <div class="elementcta-div">
+                            <a href="ablog.html?postID=${pPosts[pStart]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                        </div>
                     </div>
                 </div>`;
 
@@ -132,40 +138,50 @@ async function getLatestPosts() {
         const latestPosts = await lResponse.json();
         endIndex = latestPosts.length;
 
+        carouselListContainer.style.display = "flex";
+        loadingContainer.style.display = "none";
         carouselListContainer.innerHTML = display(latestPosts);
         console.log(latestPosts);
     }
 
     catch (error) {
-        console.log(error);
+        carouselListContainer.innerHTML = displayMessage("An error ocurred!", "error");
     }
 
 }
 
 async function next() {
     try {
+        carouselListContainer.innerHTML = `<div class="loading"></div>`;
+        carouselListContainer.style.display = "block";
         const nResponse = await fetch(url);
         const nextPosts = await nResponse.json();
 
+        carouselListContainer.style.display = "flex";
+        loadingContainer.style.display = "none";
         carouselListContainer.innerHTML = displayNext(nextPosts, startIndex);
     }
 
     catch (error) {
-        console.log(error);
+        carouselListContainer.innerHTML = displayMessage("An error ocurred!", "error");
     }
     
 }
 
 async function previuos() {
     try {
+        carouselListContainer.innerHTML = `<div class="loading"></div>`;
+        carouselListContainer.style.display = "block";
         const pResponse = await fetch(url);
         const prevPosts = await pResponse.json();
 
+        carouselListContainer.style.display = "flex";
+        loadingContainer.style.display = "none";
         carouselListContainer.innerHTML = displayPreviuos(prevPosts, endIndex);
     }
 
     catch (error) {
-        console.log(error);
+        carouselListContainer.innerHTML = displayMessage("An error ocurred!", "error");
     }
 }
 

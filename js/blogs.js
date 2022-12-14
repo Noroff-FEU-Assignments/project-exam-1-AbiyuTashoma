@@ -13,7 +13,9 @@ async function getPosts() {
     }
     
     catch (error) {
-        blogsContainer.innerHTML = error;
+        blogsContainer.innerHTML = displayMessage("An error ocurred!", "error");
+        viewMoreContainer.disabled = "true";
+        viewMoreContainer.className = "view-more-disabled";
     }
 
 }
@@ -30,7 +32,9 @@ async function getMorePosts() {
     }
     
     catch (error) {
-        blogsContainer.innerHTML += error;
+        blogsContainer.innerHTML += displayMessage("An error ocurred!", "error");
+        viewMoreContainer.disabled = "true";
+        viewMoreContainer.className = "view-more-disabled";
     }
 }
 

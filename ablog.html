@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <link href="styles/style.css" rel="stylesheet"/>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html" class="logo-a" title="my blog">
-                <img src="https://www.myblog.casa/wp-content/uploads/2022/12/myblog.png" class="logo-image" alt="myblog">
-            </a>
-        </div>
-        <div class="menu">
-            <label for="hamb-menu" class="ham-menu-label">
-                <img src="icons/hamburger-menu.svg" class="hamburger-icon" alt="hamburger menu">
-            </label>
-            <input type="checkbox" name="hamburger-menu" id="hamb-menu">
-            <nav class="main-menu">
-                <ul class="main-menu-ul">
-                    <li><a href="index.html" title="home" class="menu-a">Home</a></li>
-                    <li><a href="blogs.html" title="blog" class="active menu-a">Blog</a></li>
-                    <li><a href="about.html" title="about me" class="menu-a smaller-menu">About Me</a></li>
-                    <li><a href="contact.html" title="contact me" class="menu-a smaller-menu">Contact Me</a></li>
-                </ul>
-            </nav>
-            <form>
-                <input type="search" class="search-field" placeholder="search My Blog" title="search">
-            </form>
-        </div>
-        <div class="indicator">
-            <a href="blogs.html" class="indicator-link">Blog</a>
-            <span>&nbsp;&#47;&nbsp;</span>
-            <span class="ablog-title"></span>
-        </div>
-    </header>
-    <main>
-        <section class="main-section">
-            <div class="content-section">
-                <!-- <h1 class="content-h1"></h1> -->
-                <div class="a-blog"></div>
-                <div class="modal-container">
-                    <div class="modal-img-div">
-                        <img class="modal-image" id="image">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Blog</title>
+        <link href="styles/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html" class="logo-a" title="my blog">
+                    <img src="https://www.myblog.casa/wp-content/uploads/2022/12/myblog.png" class="logo-image" alt="myblog">
+                </a>
+            </div>
+            <div class="menu">
+                <label for="hamb-menu" class="ham-menu-label">
+                    <img src="icons/hamburger-menu.svg" class="hamburger-icon" alt="hamburger menu">
+                </label>
+                <input type="checkbox" name="hamburger-menu" id="hamb-menu">
+                <nav class="main-menu">
+                    <ul class="main-menu-ul">
+                        <li><a href="index.html" title="home" class="menu-a">Home</a></li>
+                        <li><a href="blogs.html" title="blog" class="active menu-a">Blog</a></li>
+                        <li><a href="about.html" title="about me" class="menu-a smaller-menu">About Me</a></li>
+                        <li><a href="contact.html" title="contact me" class="menu-a smaller-menu">Contact Me</a></li>
+                    </ul>
+                </nav>
+                <form>
+                    <input type="search" class="search-field" placeholder="search My Blog" title="search">
+                </form>
+            </div>
+            <div class="indicator">
+                <a href="blogs.html" class="indicator-link">Blog</a>
+                <span>&nbsp;&#47;&nbsp;</span>
+                <span class="ablog-title"></span>
+            </div>
+        </header>
+        <main>
+            <section class="main-section">
+                <div class="content-section">
+                    <!-- <h1 class="content-h1"></h1> -->
+                    <div class="a-blog"></div>
+                    <div class="modal-container">
+                        <div class="modal-img-div">
+                            <img class="modal-image" id="image">
+                        </div>
+                        <div id="caption"></div>
                     </div>
-                    <div id="caption"></div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <section class="footer-section">
-            <div class="menu-footer-div">
-                <a href="index.html" title="home" class="menu-footer">Home</a>
-                <a href="blogs.html" title="blog" class="menu-footer">Blog</a>
-                <a href="about.html" title="about me" class="menu-footer">About Me</a>
-                <a href="contact.html" title="contact me" class="menu-footer">Contact Me</a>
-            </div>
-            <div class="social-media">
-                <span>Follow me on:</span>
-                <img src="icons/facebook.png" class="icon" alt="facebook">
-                <img src="icons/instagram.png" class="icon" alt="instagram">
-                <img src="icons/tik-tok.png" class="icon" alt="tik-tok">
-                <img src="icons/snapchat.png" class="icon" alt="snapchat">
-            </div>
-        </section>
-    </footer>
-    
-    <script src="js/components/truncate.js"></script>
-    <script src="js/ablog.js"></script>
-</body>
+            </section>
+        </main>
+        <footer>
+            <section class="footer-section">
+                <div class="menu-footer-div">
+                    <a href="index.html" title="home" class="menu-footer">Home</a>
+                    <a href="blogs.html" title="blog" class="menu-footer">Blog</a>
+                    <a href="about.html" title="about me" class="menu-footer">About Me</a>
+                    <a href="contact.html" title="contact me" class="menu-footer">Contact Me</a>
+                </div>
+                <div class="social-media">
+                    <span>Follow me on:</span>
+                    <img src="icons/facebook.png" class="icon" alt="facebook">
+                    <img src="icons/instagram.png" class="icon" alt="instagram">
+                    <img src="icons/tik-tok.png" class="icon" alt="tik-tok">
+                    <img src="icons/snapchat.png" class="icon" alt="snapchat">
+                </div>
+            </section>
+        </footer>
+        
+        <script src="js/components/displayMessage.js"></script>
+        <script src="js/components/truncate.js"></script>
+        <script src="js/ablog.js"></script>
+    </body>
 </html>
