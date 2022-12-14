@@ -6,6 +6,7 @@ const offsetURL = "https://www.myblog.casa/wp-json/wp/v2/posts/?offset=10";
 
 async function getPosts() {
     blogsContainer.innerHTML += `<div class="loading"></div>`;
+    
     try {
         const response = await fetch(url);
         const posts = await response.json();

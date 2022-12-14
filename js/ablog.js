@@ -12,6 +12,8 @@ const baseURL = "https://www.myblog.casa/wp-json/wp/v2/posts/";
 const newURL = baseURL + postID;
 
 async function getAPost () {
+    aBlogContainer.innerHTML = `<div class="loading"></div>`;
+
     try {
         aResponse = await fetch(newURL);
         aPost = await aResponse.json();
@@ -30,10 +32,8 @@ async function getAPost () {
 
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
-                console.log("image " + j + " clicked");
                 modalContainer.style.display = "block";
                 modalContainer.style.top = `${window.scrollY}px`;
-                console.log(`${window.scrollY}px`);
                 modalImage.src = blogImage[j]["src"];
 
             }
