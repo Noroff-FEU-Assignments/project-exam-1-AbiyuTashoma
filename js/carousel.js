@@ -133,13 +133,14 @@ function displayPreviuos (pPosts, pStart = 0) {
 }
 
 async function getLatestPosts() {
+    carouselListContainer.innerHTML = `<div class="loading"></div>`;
+
     try {
         const lResponse = await fetch(url);
         const latestPosts = await lResponse.json();
         endIndex = latestPosts.length;
 
         carouselListContainer.style.display = "flex";
-        loadingContainer.style.display = "none";
         carouselListContainer.innerHTML = display(latestPosts);
         console.log(latestPosts);
     }
@@ -151,14 +152,14 @@ async function getLatestPosts() {
 }
 
 async function next() {
+    carouselListContainer.innerHTML = `<div class="loading"></div>`;
+    carouselListContainer.style.display = "block";
+
     try {
-        carouselListContainer.innerHTML = `<div class="loading"></div>`;
-        carouselListContainer.style.display = "block";
         const nResponse = await fetch(url);
         const nextPosts = await nResponse.json();
 
         carouselListContainer.style.display = "flex";
-        loadingContainer.style.display = "none";
         carouselListContainer.innerHTML = displayNext(nextPosts, startIndex);
     }
 
@@ -169,14 +170,14 @@ async function next() {
 }
 
 async function previuos() {
+    carouselListContainer.innerHTML = `<div class="loading"></div>`;
+    carouselListContainer.style.display = "block";
+
     try {
-        carouselListContainer.innerHTML = `<div class="loading"></div>`;
-        carouselListContainer.style.display = "block";
         const pResponse = await fetch(url);
         const prevPosts = await pResponse.json();
 
         carouselListContainer.style.display = "flex";
-        loadingContainer.style.display = "none";
         carouselListContainer.innerHTML = displayPreviuos(prevPosts, endIndex);
     }
 
