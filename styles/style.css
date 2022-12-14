@@ -350,12 +350,15 @@ header {
 
 .input-fields {
     font-size: 1em;
-    font-family: verdana, sans-serif;
     border: var(--hover-color) solid thin;
     border-radius: 5px;
     padding: 3px 7px;
     margin: 5px;
     /* background-color: var(--body-background-color); */
+}
+
+.labels {
+    font-size: 1.2em;
 }
 
 .inter-margin {
@@ -402,7 +405,7 @@ header {
 
 .note {
     color: red;
-    font-size: smaller;
+    font-size: 1em;
     margin-bottom: 10px;
     margin-left: 5px;
 }
