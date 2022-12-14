@@ -35,6 +35,7 @@ async function getAPost () {
                 modalContainer.style.top = `${window.scrollY}px`;
                 console.log(`${window.scrollY}px`);
                 modalImage.src = blogImage[j]["src"];
+
             }
 
             // console.log(blogImage[j]["className"]);
@@ -47,8 +48,14 @@ async function getAPost () {
     }
 }
 
-getAPost ();
-
-modalContainer.onclick = function () {
+function closeModal () {
     modalContainer.style.display = "none";
 }
+
+function clickModal (event) {
+    event.stopImmediatePropagation()
+}
+
+getAPost ();
+modalContainer.addEventListener("click", closeModal);
+modalImage.addEventListener("click", clickModal);
