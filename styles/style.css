@@ -413,7 +413,8 @@ header {
 .message-area {
     border-radius: 5px;
     padding: 5px;
-    margin: 5px 0;
+    margin: 10px 0;
+    font-size: 1.2em;
 }
 
 .success {
