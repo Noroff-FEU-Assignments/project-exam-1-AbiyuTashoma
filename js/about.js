@@ -1,6 +1,6 @@
 const aboutMeContainer = document.querySelector(".about-me");
 
-const aboutURL = "https://www.myblog.casa/wp-json/wp/v2/pages/?about-me";
+const aboutURL = "https://www.myblog.casa/wp-json/wp/v2/pages/?slug=about-me";
 
 async function getAboutMe () {
     aboutMeContainer.innerHTML = `<div class="loading"></div>`;
