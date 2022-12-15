@@ -433,7 +433,11 @@ header {
     height: auto;
 }
 
-.a-blog figure {
+.a-blog img:hover {
+    cursor: pointer;
+}
+
+.wp-block-image {
     margin: 0;
     text-align: center;
 }
@@ -461,7 +465,8 @@ header {
     text-underline-offset: 3px;
 }
 
-.a-blog {
+.a-blog,
+.about-me {
     padding-top: 50px ;
 }
 
@@ -494,4 +499,15 @@ header {
     /* width: 70%; */
     max-width: 800px;
     /* height: auto; */
+}
+
+/* ====================== about me page ======================= */
+
+.about-me {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+em {
+    font-weight: bold;
 }
