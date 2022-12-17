@@ -150,7 +150,7 @@ header {
 .carousel {
     display: flex;
     align-items: center;
-    min-height: 420px;
+    min-height: 430px;
     /* justify-content: space-between; */
 }
 
