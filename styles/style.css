@@ -204,12 +204,13 @@ header {
     flex-direction: column;
     background-color: var(--post-background-color);
     border-radius: 5px;
-    transition-property: background-color;
+    transition-property: background-color, transform;
     transition-duration: 0.5s;
 }
 
 .post:hover {
     background-color: var(--post-hover-color);
+    transform: translate3d(0, -3px, 0);
 }
 
 .post-title {
