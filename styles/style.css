@@ -35,52 +35,56 @@ header {
     width: 200px;
 }
 
+/* -------------- NAV MENU -----------------*/
+
+.ul-menu {
+    display: flex;
+    list-style-type: none;
+    column-gap: 50px;
+    margin: 5px auto 5px var(--left-margin);
+    padding: 0;
+    background-color: white;
+  }
+  
+  .ul-menu a {
+    text-decoration: none;
+  }
+  
+  .menu-button {
+    color: var(--menu-color);
+    font-size: 1.25em;
+    margin: 0;
+    padding: 5px 25px;
+    transition-property: background-color transform;
+    transition-duration: 0.5s;
+  }
+  
+  .menu-button:hover {
+    color: var(--hover-color);
+    background-color: var(--menu-background-color);
+  }
+  
+  /* -------------- HAMBURGER MENU -----------------*/
+  
+  #hamburger-menu,
+  .hamburger-icon {
+    display: none;
+  }
+  
+  .hamburger-icon {
+    width: 2.5em;
+  }
+
 .menu {
     display: flex;
     justify-content: space-around;
     max-width: 1000px;
     margin: 0 auto;
-}
-
-#hamb-menu,
-.ham-menu-label {
-    display: none;
-}
-
-.hamburger-icon {
-    max-width: 2em;
-}
-
-.main-menu ul {
-    padding: 0;
-    margin: 0;
-    z-index: 100;
-    width: max-content;
-}
-
-.main-menu li {
-    display: inline;
-    margin: 0 30px;
-    list-style-type: none;
-}
-
-.menu-a {
-    font-size: 1.5em;
-    color: var(--menu-color);
-    padding: 5px 25px;
-    text-decoration: none;
-    transition-property: background-color;
-    transition-duration: 0.5s;
+    align-items: center;
 }
 
 .smaller-menu {
     font-size: 1em;
-}
-
-.menu-a:hover {
-    cursor: pointer;
-    color: var(--hover-color);
-    background-color: var(--menu-background-color);
 }
 
 .active {
@@ -91,6 +95,7 @@ header {
 .search-field {
     padding: 3px;
     font-size: medium;
+    border: solid thin var(--post-background-color);
 }
 
 /* ==================================== main ==================================== */
@@ -104,14 +109,13 @@ header {
 .landing-section {
     background-image: url("../images/woman-landing.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 34vw;
+    background-size: cover;
+    min-height: 35vw;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-left: 60%;
     padding-right: 10%;
-    background-color: var(--body-background-color);
 }
 
 .landing-text-div {
@@ -151,13 +155,11 @@ header {
     display: flex;
     align-items: center;
     min-height: 430px;
-    /* justify-content: space-between; */
 }
 
 .carousel-list {
     display: block;
     width: 100%;
-    /* justify-content: space-around; */
     gap: 10px;
 }
 
@@ -178,7 +180,6 @@ header {
 
 .carousel-button:hover,
 .view-more-button:hover {
-    /* background-color: #9f9f9f; */
     background-color: var(--post-hover-color);
     cursor: pointer;
 }
@@ -230,7 +231,6 @@ header {
 }
 
 .elementcta-div {
-    /* margin: 20px auto; */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -356,7 +356,6 @@ header {
     border-radius: 5px;
     padding: 3px 7px;
     margin: 5px;
-    /* background-color: var(--body-background-color); */
 }
 
 .labels {
@@ -496,10 +495,7 @@ header {
 }
 
 #image {
-    /* display: block; */
-    /* width: 70%; */
     max-width: 800px;
-    /* height: auto; */
 }
 
 /* ====================== about me page ======================= */
@@ -512,3 +508,53 @@ header {
 em {
     font-weight: bold;
 }
+
+/* ============================== Medium size screen =============================== */
+/* ============================== ================== =============================== */
+/* and (min-width: 601px) */
+@media only screen and (max-width: 850px) {
+    
+    .menu {
+        gap: 40%;
+    }
+
+    .ul-menu {
+        flex-direction: column;
+        position: absolute;
+        margin-top: 5px;
+        column-gap: 0;
+    }
+
+    .menu-button:hover {
+        transform: translate3d(3px, 0, 0);
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+
+    #hamburger-menu:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    /* carousel */
+    .carousel,
+    .carousel-list {
+        flex-direction: column;
+    }
+
+    .next {
+        rotate: 90deg;
+        height: 70px;
+        margin-left: 0;
+    }
+
+    .previuos {
+        display: none;
+    }
+}
+

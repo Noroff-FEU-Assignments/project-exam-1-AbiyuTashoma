@@ -25,21 +25,25 @@
                 </a>
             </div>
             <div class="menu">
-                <label for="hamb-menu" class="ham-menu-label">
-                    <img src="icons/hamburger-menu.svg" class="hamburger-icon" alt="hamburger menu">
-                </label>
-                <input type="checkbox" name="hamburger-menu" id="hamb-menu">
-                <nav class="main-menu">
-                    <ul class="main-menu-ul">
-                        <li><a href="index.html" title="home" class="menu-a">Home</a></li>
-                        <li><a href="blogs.html" title="blog" class="active menu-a">Blog</a></li>
-                        <li><a href="about.html" title="about me" class="menu-a smaller-menu">About Me</a></li>
-                        <li><a href="contact.html" title="contact me" class="menu-a smaller-menu">Contact Me</a></li>
-                    </ul>
-                </nav>
-                <form>
-                    <input type="search" class="search-field" placeholder="search My Blog" title="search">
-                </form>
+                <div>
+                    <label for="hamburger-menu">
+                        <img src="icons/hamburger-menu.svg" alt="Menu" class="hamburger-icon">
+                    </label>
+                    <input type="checkbox" id="hamburger-menu" name="hamburger-menu">                            
+                    <nav class="nav-menu">
+                        <ul class="ul-menu">
+                            <li><a href="index.html" title="home"><p class="menu-button">Home</p></a></li>
+                            <li><a href="blogs.html" title="blog"><p class="menu-button active">Blog</p></a></li>
+                            <li><a href="about.html" title="about me"><p class="menu-button smaller-menu">About Me</p></a></li>
+                            <li><a href="contact.html" title="contact me"><p class="menu-button smaller-menu">Contact Me</p></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <form>
+                        <input type="search" class="search-field" placeholder="search My Blog" title="search">
+                    </form>
+                </div>
             </div>
             <div class="indicator">
                 <a href="blogs.html" class="indicator-link">Blog</a>
