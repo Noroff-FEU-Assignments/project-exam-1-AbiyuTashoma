@@ -470,6 +470,10 @@ header {
     padding-top: 50px ;
 }
 
+.a-blog p {
+    font-size: large;
+}
+
 .ablog-h1 {
     margin: 0;
     padding-bottom: 10px;
@@ -505,6 +509,19 @@ header {
     margin: 0 auto;
 }
 
+.about-me h1 {
+    margin-top: 0;
+}
+
+.about-me p {
+    font-size: large;
+}
+
+.about-me img {
+    width: 100%;
+    height: auto;
+}
+
 em {
     font-weight: bold;
 }
@@ -514,6 +531,16 @@ em {
 /* and (min-width: 601px) */
 @media only screen and (max-width: 850px) {
     
+    /* header */
+    header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    /* menu */
     .menu {
         gap: 40%;
     }
@@ -547,6 +574,11 @@ em {
         flex-direction: column;
     }
 
+    .carousel-h1,
+    .content-h1 {
+        padding: 30px 0 20px;
+    }
+
     .next {
         rotate: 90deg;
         height: 70px;
@@ -555,6 +587,12 @@ em {
 
     .previuos {
         display: none;
+    }
+
+    /* ablog */
+    .a-blog, 
+    .about-me {
+        padding-top: 30px;
     }
 }
 
