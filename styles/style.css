@@ -107,7 +107,7 @@ header {
 }
 
 .landing-section {
-    background-image: url("../images/woman-landing.jpg");
+    background-image: url("https://www.myblog.casa/wp-content/uploads/2022/12/woman-gbb605fc85_1920-1024x353.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 35vw;
@@ -284,7 +284,6 @@ header {
 }
 
 .blog-post p {
-    font-size: large;
     word-spacing: 5px;
 }
 
@@ -360,6 +359,10 @@ header {
 
 .labels {
     font-size: 1.2em;
+}
+
+.contact-p {
+    margin-top: 0;
 }
 
 .inter-margin {
@@ -499,7 +502,7 @@ header {
 }
 
 #image {
-    max-width: 800px;
+    max-width: 850px;
 }
 
 /* ====================== about me page ======================= */
@@ -528,7 +531,6 @@ em {
 
 /* ============================== Medium size screen =============================== */
 /* ============================== ================== =============================== */
-/* and (min-width: 501px) */
 @media only screen and (max-width: 850px) {
     
     /* header */
@@ -596,7 +598,7 @@ em {
 
     .carousel-h1,
     .content-h1 {
-        padding: 30px 0 20px;
+        padding: 30px 5px 20px;
     }
 
     .next {
@@ -618,13 +620,22 @@ em {
     /* ablog */
     .a-blog, 
     .about-me {
-        padding-top: 30px;
+        padding: 30px 15px;
+    }
+
+    #image {
+        max-width: 100%;
+    }
+
+    /* contact page */
+
+    .contact-form {
+        padding: 0 15px;
     }
 }
 
 /* ============================== small size screen =============================== */
 /* ============================== ================== =============================== */
-/* and (min-width: 501px) */
 @media only screen and (max-width: 550px) {
 
     /* menu */
@@ -700,4 +711,16 @@ em {
     .blogs {
         gap: 10px;
     }
+
+    .carousel-h1, 
+    .content-h1 {
+        padding: 20px 5px;
+    }
+
+    /* contact page */
+    .message-field {
+        min-width: 100px;
+        width: 90%;
+    }
+
 }
