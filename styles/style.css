@@ -16,6 +16,7 @@ html {
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     margin: 0;
 }
 
@@ -252,9 +253,13 @@ header {
     padding-bottom:  50px;
 }
 
+.blogs-section{
+    padding-bottom: 50px;
+}
+
 .blogs {
     display: block;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
 }
 
@@ -502,15 +507,10 @@ header {
 }
 
 #image {
-    max-width: 850px;
+    width: 100%;
 }
 
 /* ====================== about me page ======================= */
-
-.about-me {
-    max-width: 650px;
-    margin: 0 auto;
-}
 
 .about-me h1 {
     margin-top: 0;
@@ -617,14 +617,15 @@ em {
         font-size: medium;
     }
 
+    /* blogs */
+    .blogs {
+        grid-template-columns: 1fr 1fr;
+    }
+
     /* ablog */
     .a-blog, 
     .about-me {
         padding: 30px 15px;
-    }
-
-    #image {
-        max-width: 100%;
     }
 
     /* contact page */
