@@ -2,6 +2,7 @@ const aBlogContainer = document.querySelector(".a-blog");
 const aBlogTitleContainer = document.querySelector(".ablog-title");
 const modalContainer = document.querySelector(".modal-container");
 const modalImage = document.querySelector("#image");
+const bodyContainer = document.querySelector("body");
 
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
@@ -35,7 +36,7 @@ async function getAPost () {
                 modalContainer.style.display = "block";
                 modalContainer.style.top = `${window.scrollY}px`;
                 modalImage.src = blogImage[j]["src"];
-
+                bodyContainer.className = "stop-scroll";
             }
 
             // console.log(blogImage[j]["className"]);
@@ -50,6 +51,7 @@ async function getAPost () {
 
 function closeModal () {
     modalContainer.style.display = "none";
+    bodyContainer.className = "";
 }
 
 function clickModal (event) {

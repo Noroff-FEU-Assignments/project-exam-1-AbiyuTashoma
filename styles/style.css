@@ -25,6 +25,11 @@ body {
 header {
     padding: 35px 0;
     border-bottom: solid var(--menu-background-color) thin;
+    /* position: fixed;
+    background-color: white;
+    width: 100%;
+    display: block;
+    z-index: 3; */
 }
 
 .logo {
@@ -106,6 +111,11 @@ header {
     background-color: var(--body-background-color);
     padding: 0 25px;
 }
+
+/* .spacer {
+    position: relative;
+    top: 200px;
+} */
 
 .landing-section {
     background-image: url("https://www.myblog.casa/wp-content/uploads/2022/12/woman-gbb605fc85_1920-1024x353.jpg");
@@ -306,13 +316,36 @@ header {
     border-radius: 5px;
 }
 
+.backtotop-div {
+    padding: 30px 0;
+}
+
+.backtotop {
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--post-background-color);
+    font-size: large;
+    color: var(--text-color);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+.backtotop:hover {
+    background-color: var(--post-hover-color);
+}
+
 /* ====================== footer ======================= */
+.copyright {
+    text-align: center;
+    padding: 10px 0;
+}
+
 .footer-section {
     color: white;
     background-color: #3a3a3a;
     display: flex;
     justify-content: space-around;
-    margin: 25px auto;
+    margin: 0 auto 25px;
     padding: 15px 0px;
 }
 
@@ -320,7 +353,8 @@ header {
     text-decoration: none;
     font-size: 1em;
     color: white;
-    padding: 2px;
+    padding: 3px;
+    width: fit-content;
 }
 
 .menu-footer:hover {
@@ -331,6 +365,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: fit-content;
 }
 
 .social-media {
@@ -478,8 +513,10 @@ header {
     padding-top: 50px ;
 }
 
-.a-blog p {
+.a-blog p,
+.about-me p {
     font-size: large;
+    text-align: justify;
 }
 
 .ablog-h1 {
@@ -510,14 +547,14 @@ header {
     width: 100%;
 }
 
+.stop-scroll {
+    overflow-y: hidden;
+}
+
 /* ====================== about me page ======================= */
 
 .about-me h1 {
     margin-top: 0;
-}
-
-.about-me p {
-    font-size: large;
 }
 
 .about-me img {
@@ -629,7 +666,6 @@ em {
     }
 
     /* contact page */
-
     .contact-form {
         padding: 0 15px;
     }
