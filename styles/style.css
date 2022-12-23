@@ -25,11 +25,13 @@ body {
 header {
     padding: 35px 0;
     border-bottom: solid var(--menu-background-color) thin;
-    /* position: fixed;
+    position: sticky;
+    top: -92px;
     background-color: white;
     width: 100%;
-    display: block;
-    z-index: 3; */
+    z-index: 2;
+    /* transition-property: transform; */
+    /* transition-duration: 2.5s; */
 }
 
 .logo {
@@ -112,11 +114,6 @@ header {
     padding: 0 25px;
 }
 
-/* .spacer {
-    position: relative;
-    top: 200px;
-} */
-
 .landing-section {
     background-image: url("https://www.myblog.casa/wp-content/uploads/2022/12/woman-gbb605fc85_1920-1024x353.jpg");
     background-repeat: no-repeat;
@@ -155,7 +152,6 @@ header {
 }
 
 /* ================ latest blogs CAROUSEL ================ */
-
 .carousel-h1,
 .content-h1 {
     margin: 0;
@@ -255,7 +251,6 @@ header {
 }
 
 /* ====================== Blog post ======================= */
-
 .content-section,
 .indicator {
     max-width: 850px;
@@ -388,7 +383,6 @@ header {
 }
 
 /* ====================== contact page ======================= */
-
 .input-fields {
     font-size: 1em;
     border: var(--hover-color) solid thin;
@@ -470,7 +464,6 @@ header {
 }
 
 /* ====================== a blog page ======================= */
-
 .a-blog img {
     width: 100%;
     height: auto;
@@ -533,6 +526,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: var(--hover-color);
+    z-index: 3;
 }
 
 .modal-img-div {
