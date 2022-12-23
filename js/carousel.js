@@ -142,7 +142,6 @@ async function getLatestPosts() {
 
         carouselListContainer.style.display = "flex";
         carouselListContainer.innerHTML = display(latestPosts);
-        console.log(latestPosts);
     }
 
     catch (error) {

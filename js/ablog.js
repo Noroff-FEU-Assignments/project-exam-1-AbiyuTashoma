@@ -29,7 +29,6 @@ async function getAPost () {
         aBlogTitleContainer.innerHTML = aPost["title"]["rendered"];
 
         const blogImage = document.querySelectorAll("figure img");
-        console.log(blogImage);
 
         for (let j = 0; j < blogImage.length; j++) {
             blogImage[j].onclick = function () {
@@ -38,8 +37,6 @@ async function getAPost () {
                 modalImage.src = blogImage[j]["src"];
                 bodyContainer.className = "stop-scroll";
             }
-
-            // console.log(blogImage[j]["className"]);
         }
     
     }
