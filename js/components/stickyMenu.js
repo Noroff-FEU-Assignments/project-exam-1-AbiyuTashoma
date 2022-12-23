@@ -3,18 +3,20 @@ const stickyMenuContainer = document.querySelector("header");
 stickyMenuContainer.style.display = "block";
 
 let startPosition = 30;
+const scrollRange = -17;
 
 function detectScroll () {
     const currentPosition = window.scrollY;
 
-    if ((currentPosition - startPosition) < 0) {
+    if ((currentPosition - startPosition) < scrollRange) {
         viewSticky();
     }
 
-    else if ((currentPosition - startPosition) == 0) {
+    else if (currentPosition  < 5) {
+        viewSticky();
     }
 
-    else {
+    else if ((currentPosition - startPosition) >= 5) {
         hideSticky();
     }
 
@@ -22,7 +24,7 @@ function detectScroll () {
 }
 
 function hideSticky() {
-    stickyMenuContainer.style.display = "none"
+    stickyMenuContainer.style.display = "none";
 }
 
 function viewSticky() {

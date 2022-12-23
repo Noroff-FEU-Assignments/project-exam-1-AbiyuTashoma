@@ -30,8 +30,16 @@ header {
     background-color: white;
     width: 100%;
     z-index: 2;
-    /* transition-property: transform; */
-    /* transition-duration: 2.5s; */
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    0% {
+        top: -200px;
+    }
+    100% {
+        top: -92px;
+    }
 }
 
 .logo {
