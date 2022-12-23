@@ -567,6 +567,7 @@ em {
     /* header */
     header {
         padding: 10px 0;
+        top: -70px;
     }
 
     .logo {
