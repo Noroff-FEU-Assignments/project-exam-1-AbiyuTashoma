@@ -3,7 +3,7 @@ const stickyMenuContainer = document.querySelector("header");
 stickyMenuContainer.style.display = "block";
 
 let startPosition = 30;
-const scrollRange = -17;
+const scrollRange = -15;
 
 function detectScroll () {
     const currentPosition = window.scrollY;
