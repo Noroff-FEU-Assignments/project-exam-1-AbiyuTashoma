@@ -19,21 +19,21 @@ function display (posts) {
         const excerpt = truncate (rawExcerpt, rawExcerpt.indexOf('>') + 1, rawExcerpt.indexOf('</'))
         const imageSrc = getImageSource(posts[i]["content"]["rendered"]);
 
-    html += `   <div class="post">
-                    <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link-post">
-                        <img src=${imageSrc[0]} class="blog-post-image">
-                    </a>
-                    <div>
+        html += `   <div class="post">
                         <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link-post">
-                            <p class="post-title">${posts[i]["title"]["rendered"]}</p>
-                            <p class="post-date">${postDate}</p>
-                            <p class="post-excerpt">${excerpt}</p>
+                            <img src=${imageSrc[0]} class="blog-post-image">
                         </a>
-                        <div class="elementcta-div">
-                            <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                        <div>
+                            <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="ghost-link-post">
+                                <p class="post-title">${posts[i]["title"]["rendered"]}</p>
+                                <p class="post-date">${postDate}</p>
+                                <p class="post-excerpt">${excerpt}</p>
+                            </a>
+                            <div class="elementcta-div">
+                                <a href="ablog.html?postID=${posts[i]["id"]}" title="read" class="element-cta landing-cta">Read</a>
+                            </div>
                         </div>
-                    </div>
-                </div>`;
+                    </div>`;
 
         startIndex += 1;
         endIndex -= 1;
