@@ -270,6 +270,16 @@ header {
     padding-bottom: 50px;
 }
 
+.orderby-div {
+    padding: 0 0 15px;
+}
+
+.orderby {
+    padding: 3px;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: medium;
+}
+
 .blogs {
     display: block;
     grid-template-columns: 1fr 1fr 1fr;
