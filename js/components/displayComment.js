@@ -1,14 +1,12 @@
 const commentField = `<form class="comment-form">
                         <div class="message"></div>
+                        <p class="leave-comment">Leave comment</p>
                         <input type="text" title="name" id="name" placeholder="Name" name="name" class="input-fields">
                         <div class="note-name"></div>                                                
                         <textarea class="input-fields message-field" id="contact-message" placeholder="Comment" title="message" name="message"></textarea>
                         <div class="note-contactmessage"></div>
                         <input type="submit" title="submit" name="submit" value="Submit" class="submit-comment">
                     </form>`;
-
-// <label for="name" title="name" class="labels">Name</label>
-// <label for="contact-message" title="message"  class="labels">Message</label>
 
 function displayComment (blogComment) {
     let html = commentField;

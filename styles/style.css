@@ -346,9 +346,17 @@ header {
     transition-duration: 0.5s;
 }
 
+.submit-comment {
+    padding: 5px 10px;
+    border: none;
+    font-size: medium;
+    margin-left: 5px;
+}
+
 .backtotop:hover,
 .submit-comment:hover {
     background-color: var(--post-hover-color);
+    cursor: pointer;
 }
 
 /* ====================== footer ======================= */
@@ -530,7 +538,7 @@ header {
 
 .a-blog {
     border-bottom: double var(--text-color);
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .a-blog p,
@@ -572,6 +580,12 @@ header {
     overflow-y: hidden;
 }
 
+.comment-form {
+    padding-bottom: 20px;
+    border-bottom: solid thin var(--text-color);
+    margin-bottom: 10px;
+}
+
 .comment {
     margin-top: 15px;
 }
@@ -580,7 +594,9 @@ header {
     font-size: medium;
 }
 
-
+.leave-comment {
+    margin: 5px;
+}
 
 /* ====================== about me page ======================= */
 
