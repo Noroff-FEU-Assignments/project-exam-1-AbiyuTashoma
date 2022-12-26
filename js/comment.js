@@ -48,13 +48,13 @@ function validateComment(event) {
     const email = emailContainer.value;
     const comment = commentMessageContainer.value;
 
-    const validName = validateText(name, 6);
+    const validName = validateText(name, 5);
     const validEmail = validateEmail(email);
-    const validMessage = validateText(comment, 6);
+    const validMessage = validateText(comment, 5);
 
     if (!validName) {
         validComment = false;
-        setError(noteNameContainer, nameContainer, "Name should be minimum 6 characters");
+        setError(noteNameContainer, nameContainer, "Name should be minimum 5 characters");
     }
 
     if (!validEmail) {
@@ -64,16 +64,13 @@ function validateComment(event) {
 
     if (!validMessage) {
         validComment = false;
-        setError(noteCommentMessageContainer, commentMessageContainer, "Comment should be minimum 10 characters");
+        setError(noteCommentMessageContainer, commentMessageContainer, "Comment should be minimum 5 characters");
     }
 
     //on submit
     if (validComment) {
-        messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
         const commentData = {"author_name": name, "author_email": email, "content": comment};
         postComment (newCommentURL, commentData);
-        getComment (newCommentURL);
-        commentFormContainer.reset();
     }
 }
 
@@ -89,11 +86,23 @@ async function postComment (postURL, postData) {
         });
 
         const result = await response.json();
+
+        if (result["code"]) {
+            setError(noteEmailContainer, emailContainer, "Enter valid email");
+        }
+
+         else {
+            messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
+            getComment (newCommentURL);
+            commentFormContainer.reset();
+         }
+
         console.log(result);
     }
 
     catch (error) {
-        console.log(error);
+        console.log("error:" + error);
+        return error;
     }
 }
 

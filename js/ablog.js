@@ -25,7 +25,8 @@ async function getAPost () {
         
         aBlogContainer.innerHTML = `<h1 class="ablog-h1">${aPost["title"]["rendered"]}</h1>
                                     <p class="post-date">${aPostDate}</p>
-                                    ${aPost["content"]["rendered"]}`;
+                                    ${aPost["content"]["rendered"]}
+                                    <div class="backtotop-div"><a href="#totop" class="backtotop" title="back to top">&#10595; Back to top</a></div>`;
 
         document.title += ` | ${aPost["title"]["rendered"]}`;
         aBlogTitleContainer.innerHTML = aPost["title"]["rendered"];

@@ -415,6 +415,7 @@ header {
 /* ====================== contact page ======================= */
 .input-fields {
     font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     border: var(--hover-color) solid thin;
     border-radius: 5px;
     padding: 3px 7px;
@@ -538,7 +539,7 @@ header {
 
 .a-blog {
     border-bottom: double var(--text-color);
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .a-blog p,
