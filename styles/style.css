@@ -154,7 +154,7 @@ header {
 
 .landing-cta:hover,
 .element-cta:hover,
-.submit-button:hover {
+.submit-message:hover {
     background-color: var(--cta-hover-color);
     cursor: pointer;
 }
@@ -229,13 +229,15 @@ header {
     transform: translate3d(0, -3px, 0);
 }
 
-.post-title {
+.post-title,
+.author-name {
     font-weight: 600;
     font-size: x-large;
     margin: 0;
 }
 
-.post-date {
+.post-date,
+.comment-date {
     margin: 0;
     text-decoration: underline;
     text-decoration-thickness: 0.5px;
@@ -333,7 +335,8 @@ header {
     padding: 30px 0;
 }
 
-.backtotop {
+.backtotop,
+.submit-comment {
     text-decoration: none;
     padding: 10px;
     background-color: var(--post-background-color);
@@ -343,7 +346,8 @@ header {
     transition-duration: 0.5s;
 }
 
-.backtotop:hover {
+.backtotop:hover,
+.submit-comment:hover {
     background-color: var(--post-hover-color);
 }
 
@@ -426,7 +430,7 @@ header {
     height: 100px;
 }
 
-.submit-button {
+.submit-message {
     font-size: larger;
     padding: 5px 10px;
     border: none;
@@ -524,6 +528,11 @@ header {
     padding-top: 50px ;
 }
 
+.a-blog {
+    border-bottom: double var(--text-color);
+    padding-bottom: 20px;
+}
+
 .a-blog p,
 .about-me p {
     font-size: large;
@@ -562,6 +571,16 @@ header {
 .stop-scroll {
     overflow-y: hidden;
 }
+
+.comment {
+    margin-top: 15px;
+}
+
+.author-name {
+    font-size: medium;
+}
+
+
 
 /* ====================== about me page ======================= */
 
@@ -672,10 +691,18 @@ em {
         grid-template-columns: 1fr 1fr;
     }
 
+    .backtotop-div {
+        padding: 30px 15px;
+    }
+
     /* ablog */
     .a-blog, 
     .about-me {
         padding: 30px 15px;
+    }
+
+    .comment {
+        padding: 0 15px;
     }
 
     /* contact page */

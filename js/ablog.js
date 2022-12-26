@@ -3,14 +3,17 @@ const aBlogTitleContainer = document.querySelector(".ablog-title");
 const modalContainer = document.querySelector(".modal-container");
 const modalImage = document.querySelector("#image");
 const bodyContainer = document.querySelector("body");
+const commentContainer = document.querySelector(".comment");
 
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
 const postID = parameter.get("postID");
 
 const baseURL = "https://www.myblog.casa/wp-json/wp/v2/posts/";
+const commentURL = "https://www.myblog.casa/wp-json/wp/v2/comments/?post=";
 
 const newURL = baseURL + postID;
+const newCommentURL = commentURL + postID;
 
 async function getAPost () {
     aBlogContainer.innerHTML = `<div class="loading"></div>`;
@@ -38,11 +41,28 @@ async function getAPost () {
                 bodyContainer.className = "stop-scroll";
             }
         }
+
+        getComment ();
     
     }
 
     catch (error) {
-        aBlogContainer.innerHTML = error;
+        aBlogContainer.innerHTML = displayMessage("An error ocurred!", "error");
+    }
+}
+
+async function getComment () {
+    commentContainer.innerHTML = `<div class="loading"></div>`;
+
+    try {
+        const cResponse = await fetch(newCommentURL);
+        const comment = await cResponse.json();
+
+        commentContainer.innerHTML = displayComment(comment);
+    }
+
+    catch (error) {
+        aBlogContainer.innerHTML = displayMessage("An error ocurred!", "error");
     }
 }
 
