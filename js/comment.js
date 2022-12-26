@@ -3,9 +3,11 @@ const commentContainer = document.querySelector(".comment");
 const commentFormContainer = document.querySelector(".comment-form");
 const messageContainer = document.querySelector(".message");
 const nameContainer = document.querySelector("#name");
+const emailContainer = document.querySelector("#email");
 const commentMessageContainer = document.querySelector("#comment-message")
 
 const noteNameContainer = document.querySelector(".note-name");
+const noteEmailContainer = document.querySelector(".note-email");
 const noteCommentMessageContainer = document.querySelector(".note-commentmessage");
 
 async function getComment (cmntURL) {
@@ -28,6 +30,10 @@ nameContainer.oninput = function() {
     clearError(noteNameContainer, nameContainer);
 }
 
+emailContainer.oninput = function() {
+    clearError(noteEmailContainer, emailContainer);
+}
+
 commentMessageContainer.oninput = function() {
     clearError(noteCommentMessageContainer, commentMessageContainer);
 }
@@ -39,14 +45,21 @@ function validateComment(event) {
     let validComment = true;
 
     const name = nameContainer.value;
+    const email = emailContainer.value;
     const comment = commentMessageContainer.value;
 
     const validName = validateText(name, 6);
+    const validEmail = validateEmail(email);
     const validMessage = validateText(comment, 6);
 
     if (!validName) {
         validComment = false;
         setError(noteNameContainer, nameContainer, "Name should be minimum 6 characters");
+    }
+
+    if (!validEmail) {
+        validComment = false;
+        setError(noteEmailContainer, emailContainer, "Enter valid email");
     }
 
     if (!validMessage) {
@@ -57,6 +70,7 @@ function validateComment(event) {
     //on submit
     if (validComment) {
         messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
+        getComment (newCommentURL);
         commentFormContainer.reset();
     }
 }
