@@ -3,7 +3,6 @@ const aBlogTitleContainer = document.querySelector(".ablog-title");
 const modalContainer = document.querySelector(".modal-container");
 const modalImage = document.querySelector("#image");
 const bodyContainer = document.querySelector("body");
-const commentContainer = document.querySelector(".comment");
 
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
@@ -42,23 +41,7 @@ async function getAPost () {
             }
         }
 
-        getComment ();
-    
-    }
-
-    catch (error) {
-        aBlogContainer.innerHTML = displayMessage("An error ocurred!", "error");
-    }
-}
-
-async function getComment () {
-    commentContainer.innerHTML = `<div class="loading"></div>`;
-
-    try {
-        const cResponse = await fetch(newCommentURL);
-        const comment = await cResponse.json();
-
-        commentContainer.innerHTML = displayComment(comment);
+        getComment (newCommentURL);
     }
 
     catch (error) {

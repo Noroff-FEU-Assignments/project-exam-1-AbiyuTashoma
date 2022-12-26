@@ -3,13 +3,13 @@ const commentField = `<form class="comment-form">
                         <p class="leave-comment">Leave comment</p>
                         <input type="text" title="name" id="name" placeholder="Name" name="name" class="input-fields">
                         <div class="note-name"></div>                                                
-                        <textarea class="input-fields message-field" id="contact-message" placeholder="Comment" title="message" name="message"></textarea>
-                        <div class="note-contactmessage"></div>
+                        <textarea class="input-fields message-field" id="comment-message" placeholder="Comment" title="message" name="message"></textarea>
+                        <div class="note-commentmessage"></div>
                         <input type="submit" title="submit" name="submit" value="Submit" class="submit-comment">
                     </form>`;
 
 function displayComment (blogComment) {
-    let html = commentField;
+    let html = "";
 
     for (let l = 0; l < blogComment.length; l++) {
         const commentDate = truncate (blogComment[l]["date"], 0, blogComment[l]["date"].indexOf('T'));

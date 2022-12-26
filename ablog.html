@@ -68,6 +68,15 @@
                         </div>
                         <div id="caption"></div>
                     </div>
+                    <form class="comment-form">
+                        <div class="message"></div>
+                        <p class="leave-comment">Leave comment</p>
+                        <input type="text" title="name" id="name" placeholder="Name" name="name" class="input-fields">
+                        <div class="note-name"></div>                                                
+                        <textarea class="input-fields message-field" id="comment-message" placeholder="Comment" title="message" name="message"></textarea>
+                        <div class="note-commentmessage"></div>
+                        <input type="submit" title="submit" name="submit" value="Submit" class="submit-comment">
+                    </form>
                     <div class="comment"></div>
                     <div class="backtotop-div">
                         <a href="#totop" class="backtotop" title="back to top">&#10595; Back to top</a>
@@ -101,6 +110,9 @@
         <script src="js/components/truncate.js"></script>
         <script src="js/components/getImages.js"></script>
         <script src="js/components/displayComment.js"></script>
+        <script src="js/components/validate.js"></script>
+        <script src="js/components/setClearError.js"></script>
+        <script src="js/comment.js"></script>
         <script src="js/ablog.js"></script>
         <script src="js/components/displayPosts.js"></script>
         <script src="js/search.js"></script>
