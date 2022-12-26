@@ -70,8 +70,30 @@ function validateComment(event) {
     //on submit
     if (validComment) {
         messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
+        const commentData = {"author_name": name, "author_email": email, "content": comment};
+        postComment (newCommentURL, commentData);
         getComment (newCommentURL);
         commentFormContainer.reset();
+    }
+}
+
+// POST comment to wordpress:
+async function postComment (postURL, postData) {
+    try {
+        const response = await fetch(postURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(postData)
+        });
+
+        const result = await response.json();
+        console.log(result);
+    }
+
+    catch (error) {
+        console.log(error);
     }
 }
 
