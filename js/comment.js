@@ -91,11 +91,11 @@ async function postComment (postURL, postData) {
             setError(noteEmailContainer, emailContainer, "Enter valid email");
         }
 
-         else {
+        else {
             messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
             getComment (newCommentURL);
             commentFormContainer.reset();
-         }
+        }
 
         console.log(result);
     }
