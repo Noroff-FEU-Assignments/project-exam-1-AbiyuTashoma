@@ -96,13 +96,10 @@ async function postComment (postURL, postData) {
             getComment (newCommentURL);
             commentFormContainer.reset();
         }
-
-        console.log(result);
     }
 
     catch (error) {
-        console.log("error:" + error);
-        return error;
+        messageContainer.innerHTML = displayMessage("An error ocurred!", "error");
     }
 }
 

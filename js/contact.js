@@ -11,6 +11,7 @@ const noteEmailContainer = document.querySelector(".note-email");
 const noteSubjectContainer = document.querySelector(".note-subject");
 const noteContactMessageContainer = document.querySelector(".note-contactmessage");
 
+const feedbackURL = "https://myblog.casa/wp-json/contact-form-7/v1/contact-forms/179/feedback";
 //clear error message onchange and oninput
 nameContainer.oninput = function() {
     clearError(noteNameContainer, nameContainer);
@@ -66,8 +67,43 @@ function validate(event) {
 
     //on submit
     if (validFeedback) {
+        const feedbackData = {"user": name, "email": email, "subject": subject, "message": message};
+        postFeedback (feedbackData);
         messageContainer.innerHTML = displayMessage("Message successfully sent!", "success");
         contactFormContainer.reset();
+    }
+}
+
+// [contact-form-7 id="179" title="Contact form 1"] Shortcode
+
+// POST comment to wordpress:
+async function postFeedback (fbData) {
+    try {
+        const response = await fetch(feedbackURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/html'
+            },
+            body: fbData
+        });
+
+        const result = await response.json();
+
+        // if (result["code"]) {
+        //     setError(noteEmailContainer, emailContainer, "Enter valid email");
+        // }
+
+        // else {
+        //     messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
+        //     getComment (newCommentURL);
+        //     commentFormContainer.reset();
+        // }
+
+        console.log(result);
+    }
+
+    catch (error) {
+        console.log("error:" + error);
     }
 }
 
