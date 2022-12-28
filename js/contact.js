@@ -12,6 +12,7 @@ const noteSubjectContainer = document.querySelector(".note-subject");
 const noteContactMessageContainer = document.querySelector(".note-contactmessage");
 
 const feedbackURL = "https://myblog.casa/wp-json/contact-form-7/v1/contact-forms/179/feedback";
+const contactURL = "https://www.myblog.casa/wp-json/wp/v2/comments/?post=185";
 //clear error message onchange and oninput
 nameContainer.oninput = function() {
     clearError(noteNameContainer, nameContainer);
@@ -74,17 +75,20 @@ function validate(event) {
     }
 }
 
-// [contact-form-7 id="179" title="Contact form 1"] Shortcode
+// contact: LBG2 EZje WgYN o74p 2FDk Ulip
+// password: LBG2contactmeEZje //pw protected
 
 // POST comment to wordpress:
 async function postFeedback (fbData) {
     try {
-        const response = await fetch(feedbackURL, {
+        const response = await fetch(contactURL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'text/html'
+                'Content-Type': 'application/json',
+                // 'user': 'contact: LBG2 EZje WgYN o74p 2FDk Ulip',
+                'password': 'LBG2contactmeEZje'
             },
-            body: fbData
+            body: JSON.stringify(fbData)
         });
 
         const result = await response.json();
