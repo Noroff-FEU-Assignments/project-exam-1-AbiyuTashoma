@@ -8,8 +8,6 @@ const scrollRange = -10;
 function detectScroll () {
     const currentPosition = window.scrollY;
 
-    
-
     if (currentPosition  < 2) {
         viewSticky();
     }

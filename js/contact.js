@@ -68,7 +68,7 @@ function validate(event) {
     //on submit
     if (validFeedback) {
         const feedbackData = {"name": name, "email": email, "subject": subject, "message": message};
-        postFeedback (feedbackData);
+        // postFeedback (feedbackData);
         messageContainer.innerHTML = displayMessage("Message successfully sent!", "success");
         contactFormContainer.reset();
     }
