@@ -8,16 +8,20 @@ const scrollRange = -10;
 function detectScroll () {
     const currentPosition = window.scrollY;
 
-    if ((currentPosition - startPosition) < scrollRange) {
+    
+
+    if (currentPosition  < 2) {
         viewSticky();
     }
 
-    else if (currentPosition  < 5) {
-        viewSticky();
-    }
+    else if (currentPosition > 220) {
+        if ((currentPosition - startPosition) < scrollRange) {
+            viewSticky();
+        }
 
-    else if ((currentPosition - startPosition) >= 5) {
-        hideSticky();
+        else if ((currentPosition - startPosition) >= 5) {
+            hideSticky();
+        }
     }
 
     startPosition = window.scrollY;
