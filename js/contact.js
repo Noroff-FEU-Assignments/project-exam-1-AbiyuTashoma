@@ -86,9 +86,7 @@ async function postFeedback (fbData) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Headers': '*' ,
-                // 'user': 'contact: LBG2 EZje WgYN o74p 2FDk Ulip',
-                // 'password': 'LBG2contactmeEZje'
+                'Origin': 'https://cerulean-souffle-928f1a.netlify.app'
             },
             body: JSON.stringify(fbData)
         });
