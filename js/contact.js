@@ -40,10 +40,10 @@ function validate(event) {
     const subject = subjectContainer.value;
     const message = contactMessageContainer.value;
 
-    const validName = validateText(name, 6);
+    const validName = validateText(name, 0); //6
     const validEmail = validateEmail(email);
-    const validSubject = validateText(subject, 16)
-    const validMessage = validateText(message, 26);
+    const validSubject = validateText(subject, 1) //16
+    const validMessage = validateText(message, 2); //26
 
     if (!validName) {
         validFeedback = false;
@@ -67,8 +67,8 @@ function validate(event) {
 
     //on submit
     if (validFeedback) {
-        const feedbackData = {"name": name, "email": email, "subject": subject, "message": message};
-        // postFeedback (feedbackData);
+        const feedbackData = {"user": name, "email": email, "subject": subject, "message": message};
+        postFeedback (feedbackData);
         messageContainer.innerHTML = displayMessage("Message successfully sent!", "success");
         contactFormContainer.reset();
     }
@@ -78,7 +78,7 @@ function validate(event) {
 // password: LBG2contactmeEZje //pw protected
 
 
-const contactURL = "https://www.myblog.casa/wp-json/mo/v1/contact";
+const contactURL = "https://www.myblog.casa/wp-json/twentytwentytwo-child/v1/contact";
 // POST comment to wordpress:
 async function postFeedback (fbData) {
     try {
@@ -86,6 +86,7 @@ async function postFeedback (fbData) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Headers': '*' ,
                 // 'user': 'contact: LBG2 EZje WgYN o74p 2FDk Ulip',
                 // 'password': 'LBG2contactmeEZje'
             },
@@ -108,7 +109,7 @@ async function postFeedback (fbData) {
     }
 
     catch (error) {
-        console.log("error:" + error);
+        console.log("ERRR:" + error);
     }
 }
 
