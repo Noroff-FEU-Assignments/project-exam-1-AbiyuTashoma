@@ -78,15 +78,18 @@ function validate(event) {
 // password: LBG2contactmeEZje //pw protected
 
 
-const contactURL = "https://www.myblog.casa/wp-json/twentytwentytwo-child/v1/contact";
+const feedbackURL = "https://www.myblog.casa/wp-json/twentytwentytwo-child/v1/feedback";
 // POST comment to wordpress:
 async function postFeedback (fbData) {
     try {
-        const response = await fetch(contactURL, {
+        const response = await fetch(feedbackURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Origin': 'https://cerulean-souffle-928f1a.netlify.app'
+                // 'Origin': '*',
+                // 'Access-Control-Allow-Origin': 'https://cerulean-souffle-928f1a.netlify.app'
+                // 'Origin': 'https://cryptic-headland-94862.herokuapp.com/'
+                // 'Origin': 'https://cerulean-souffle-928f1a.netlify.app'
             },
             body: JSON.stringify(fbData)
         });
