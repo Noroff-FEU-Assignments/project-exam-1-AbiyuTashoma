@@ -361,6 +361,7 @@ header {
 
 /* ====================== footer ======================= */
 .copyright {
+    font-size: smaller;
     text-align: center;
     padding: 5px 0;
 }
@@ -370,7 +371,6 @@ header {
     background-color: #3a3a3a;
     /* display: flex; */
     /* justify-content: space-around; */
-    padding: 25px 0px;
 }
 
 /* .menu-footer {
@@ -397,6 +397,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    padding: 25px 0px;
 }
 
 .icon {
