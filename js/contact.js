@@ -40,10 +40,10 @@ function validate(event) {
     const subject = subjectContainer.value;
     const message = contactMessageContainer.value;
 
-    const validName = validateText(name, 0); //6
+    const validName = validateText(name, 6);
     const validEmail = validateEmail(email);
-    const validSubject = validateText(subject, 1) //16
-    const validMessage = validateText(message, 2); //26
+    const validSubject = validateText(subject, 16)
+    const validMessage = validateText(message, 26);
 
     if (!validName) {
         validFeedback = false;
@@ -69,48 +69,34 @@ function validate(event) {
     if (validFeedback) {
         const feedbackData = {"name": name, "email": email, "subject": subject, "message": message};
         postFeedback (feedbackData);
-        messageContainer.innerHTML = displayMessage("Message successfully sent!", "success");
-        contactFormContainer.reset();
     }
 }
 
-// contact: LBG2 EZje WgYN o74p 2FDk Ulip
-// password: LBG2contactmeEZje //pw protected
-
-
 const feedbackURL = "https://www.myblog.casa/wp-json/twentytwentytwo-child/v1/feedback";
-// POST comment to wordpress:
 async function postFeedback (fbData) {
     try {
         const response = await fetch(feedbackURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // 'Origin': '*',
-                // 'Access-Control-Allow-Origin': 'https://cerulean-souffle-928f1a.netlify.app'
-                // 'Origin': 'https://cryptic-headland-94862.herokuapp.com/'
-                // 'Origin': 'https://cerulean-souffle-928f1a.netlify.app'
             },
             body: JSON.stringify(fbData)
         });
 
         const result = await response.json();
+        
+        if (result["status"] == "success") {
+            messageContainer.innerHTML = displayMessage("Message successfully sent!", "success");
+            contactFormContainer.reset();
+        }
 
-        // if (result["code"]) {
-        //     setError(noteEmailContainer, emailContainer, "Enter valid email");
-        // }
-
-        // else {
-        //     messageContainer.innerHTML = displayMessage("Comment successfully sent!", "success");
-        //     getComment (newCommentURL);
-        //     commentFormContainer.reset();
-        // }
-
-        console.log(result);
+        else {
+            messageContainer.innerHTML = displayMessage("An error ocurred!", "error");
+        }
     }
 
     catch (error) {
-        console.log("ERRR:" + error);
+        messageContainer.innerHTML = displayMessage("An error ocurred!", "error");
     }
 }
 

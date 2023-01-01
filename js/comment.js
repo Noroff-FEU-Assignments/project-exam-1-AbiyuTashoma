@@ -48,13 +48,13 @@ function validateComment(event) {
     const email = emailContainer.value;
     const comment = commentMessageContainer.value;
 
-    const validName = validateText(name, 5);
+    const validName = validateText(name, 3);
     const validEmail = validateEmail(email);
     const validMessage = validateText(comment, 5);
 
     if (!validName) {
         validComment = false;
-        setError(noteNameContainer, nameContainer, "Name should be minimum 5 characters");
+        setError(noteNameContainer, nameContainer, "Name should be minimum 3 characters");
     }
 
     if (!validEmail) {
