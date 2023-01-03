@@ -3,9 +3,12 @@ const viewMoreContainer = document.querySelector(".view-more-button");
 const orderByContainer= document.querySelector("#order");
 
 const url = "https://www.myblog.casa/wp-json/wp/v2/posts";
-const offsetURL = url + "/?offset=10";
-const orderbyURL = url + "/?orderby=";
-const orderString = "&order=asc";
+const offset = "&offset=10";
+const orderby = "/?orderby=";
+const orderAscending = "&order=asc";
+const date = "date";
+
+let defaultView = url + orderby + date;
 
 async function getPosts (postsURL) {
     blogsContainer.innerHTML += `<div class="loading"></div>`;
@@ -27,6 +30,7 @@ async function getPosts (postsURL) {
 }
 
 async function getMorePosts () {
+    const offsetURL = defaultView + offset;
     blogsContainer.innerHTML += `<div class="loading"></div>`;
     const loadingContainer = document.querySelector(".loading");
 
@@ -50,19 +54,22 @@ async function getMorePosts () {
 }
 
 function orderBy () {
+    const orderbyURL = url + orderby;
     const orderByValue = orderByContainer.value;
     let obURL = orderbyURL + `${orderByValue}`;
 
     if (orderByValue == "title") {
-        obURL += orderString;
+        obURL += orderAscending;
     }
 
     getPosts(obURL);
-    viewMoreContainer.disabled = "true";
-    viewMoreContainer.className = "view-more-disabled";
+    defaultView = obURL;
+    // const viewMoreDisabled = document.querySelector(".view-more-disabled");
+    // viewMoreDisabled.disabled = "false";
+    // viewMoreDisabled.className = "view-more-button";
 }
 
-getPosts(url);
+getPosts(defaultView);
 
 viewMoreContainer.addEventListener("click", getMorePosts);
 orderByContainer.addEventListener("change", orderBy);
