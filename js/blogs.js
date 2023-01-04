@@ -1,5 +1,6 @@
 const blogsContainer = document.querySelector(".blogs");
 const viewMoreContainer = document.querySelector(".view-more-button");
+const viewMoreActiveContainer = document.querySelector(".view-more-active");
 const orderByContainer= document.querySelector("#order");
 
 const url = "https://www.myblog.casa/wp-json/wp/v2/posts";
@@ -24,7 +25,7 @@ async function getPosts (postsURL) {
     catch (error) {
         blogsContainer.innerHTML = displayMessage("An error ocurred!", "error");
         viewMoreContainer.disabled = "true";
-        viewMoreContainer.className = "view-more-disabled";
+        viewMoreContainer.classList.remove ("view-more-active");
     }
 
 }
@@ -42,14 +43,14 @@ async function getMorePosts () {
         blogsContainer.innerHTML += displayPosts(mPosts);
 
         viewMoreContainer.disabled = "true";
-        viewMoreContainer.className = "view-more-disabled";
+        viewMoreContainer.classList.remove ("view-more-active");
     }
     
     catch (error) {
         loadingContainer.style.display = "none";
         blogsContainer.innerHTML += displayMessage("An error ocurred!", "error");
         viewMoreContainer.disabled = "true";
-        viewMoreContainer.className = "view-more-disabled";
+        viewMoreContainer.classList.remove ("view-more-active");
     }
 }
 
@@ -64,9 +65,8 @@ function orderBy () {
 
     getPosts(obURL);
     defaultView = obURL;
-    // const viewMoreDisabled = document.querySelector(".view-more-disabled");
-    // viewMoreDisabled.disabled = "false";
-    // viewMoreDisabled.className = "view-more-button";
+    viewMoreContainer.disabled = "";
+    viewMoreContainer.classList.add ("view-more-active");
 }
 
 getPosts(defaultView);

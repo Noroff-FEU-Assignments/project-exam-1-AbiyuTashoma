@@ -183,8 +183,7 @@ header {
 }
 
 .carousel-button,
-.view-more-button,
-.view-more-disabled {
+.view-more-button {
     height: 130px;
     font-size: xx-large;
     background-color: var(--post-background-color);
@@ -193,8 +192,9 @@ header {
     transition-duration: 0.5s;
 }
 
+
 .carousel-button:hover,
-.view-more-button:hover {
+.view-more-active:hover {
     background-color: var(--post-hover-color);
     cursor: pointer;
 }
@@ -323,8 +323,7 @@ header {
     margin-top: 25px;
 }
 
-.view-more-button,
-.view-more-disabled {
+.view-more-button {
     font-size: large;
     height: auto;
     padding: 10px 30px;
