@@ -100,10 +100,6 @@ header {
     align-items: center;
 }
 
-.smaller-menu {
-    font-size: 1em;
-}
-
 .active {
     color: var(--hover-color);
     background-color: var(--menu-background-color);
