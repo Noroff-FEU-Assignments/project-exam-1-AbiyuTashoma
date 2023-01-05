@@ -1,5 +1,5 @@
-function validateText (stringValue, len = 1) {
-    if (stringValue.trim().length >= len) {
+function validateText (stringValue, minLenText = 1) {
+    if (stringValue.trim().length >= minLenText) {
         return true;
     }
 
@@ -8,8 +8,12 @@ function validateText (stringValue, len = 1) {
     }
 }
 
+ //
+ //"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+
 function validateEmail (emailValue) {
-    const regEx = /\S+@\S+\.\S+/;
+    // const regEx = /\S+@\S+\.\S+/;
+    const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     const match = regEx.test(emailValue);
-    return match;
+    return match;   
 }
