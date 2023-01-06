@@ -165,7 +165,7 @@ header {
 .carousel {
     display: flex;
     align-items: center;
-    min-height: 450px;
+    min-height: 472px;
 }
 
 .carousel-list {
