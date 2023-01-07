@@ -567,6 +567,7 @@ header {
 
 #image {
     width: 100%;
+    max-width: 950px;
 }
 
 .stop-scroll {
