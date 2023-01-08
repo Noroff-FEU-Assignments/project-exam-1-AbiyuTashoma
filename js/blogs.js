@@ -1,3 +1,4 @@
+const mainSectionContainer = document.querySelector(".main-section");
 const blogsContainer = document.querySelector(".blogs");
 const viewMoreContainer = document.querySelector(".view-more-button");
 const viewMoreActiveContainer = document.querySelector(".view-more-active");
@@ -69,6 +70,7 @@ function orderBy () {
     viewMoreContainer.classList.add ("view-more-active");
 }
 
+setHeight (mainSectionContainer, 248);
 getPosts(defaultView);
 
 viewMoreContainer.addEventListener("click", getMorePosts);

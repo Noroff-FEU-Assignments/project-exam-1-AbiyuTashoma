@@ -1,3 +1,4 @@
+const mainSectionContainer = document.querySelector(".main-section");
 const aBlogContainer = document.querySelector(".a-blog");
 const aBlogTitleContainer = document.querySelector(".ablog-title");
 const modalContainer = document.querySelector(".modal-container");
@@ -59,6 +60,7 @@ function clickModal (event) {
     event.stopImmediatePropagation()
 }
 
+setHeight (mainSectionContainer, 248);
 getAPost ();
 modalContainer.addEventListener("click", closeModal);
 modalImage.addEventListener("click", clickModal);

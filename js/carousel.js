@@ -1,3 +1,4 @@
+const mainSectionContainer = document.querySelector(".main-section");
 const carouselContainer = document.querySelector(".carousel");
 const loadingContainer = document.querySelector(".loading");
 const carouselListContainer = document.querySelector(".carousel-list");
@@ -185,6 +186,7 @@ async function previuos() {
     }
 }
 
+setHeight (mainSectionContainer, 550);
 getLatestPosts();
 
 nextContainer.addEventListener("click", next);

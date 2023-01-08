@@ -1,7 +1,5 @@
 const searchFormContainer = document.querySelector(".search-form");
-const searchFieldContainer = document.querySelector(".search-field");
-const mainSectionContainer = document.querySelector(".main-section");
-const winHeight = window.screen.availHeight;
+const searchFieldContainer = document.querySelector(".search-field");;
 
 const searchURL = "https://www.myblog.casa/wp-json/wp/v2/posts/?search=";
 
@@ -21,8 +19,6 @@ async function searchBlog (searchString) {
 
         const blogsSearchContainer = document.querySelector(".blogs");
         blogsSearchContainer.style.display = "grid";
-        mainSectionContainer.style.minHeight = `${winHeight - 490}px`;
-
     }
 
     catch (error) {

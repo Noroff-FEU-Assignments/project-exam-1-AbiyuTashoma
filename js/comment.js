@@ -48,9 +48,9 @@ function validateComment(event) {
     const email = emailContainer.value;
     const comment = commentMessageContainer.value;
 
-    const validName = validateText(name); //3
+    const validName = validateText(name, 3);
     const validEmail = validateEmail(email);
-    const validMessage = validateText(comment); //5
+    const validMessage = validateText(comment, 5);
 
     if (!validName) {
         validComment = false;
@@ -86,7 +86,6 @@ async function postComment (postURL, postData) {
         });
 
         const result = await response.json();
-        console.log(result);
 
         if (result["code"] == "rest_invalid_param") {
             setError(noteEmailContainer, emailContainer, "Enter valid email");

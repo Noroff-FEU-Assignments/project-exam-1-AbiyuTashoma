@@ -1,3 +1,4 @@
+const mainSectionContainer = document.querySelector(".main-section");
 const contactFormContainer = document.querySelector(".contact-form");
 const messageContainer = document.querySelector(".message");
 
@@ -102,3 +103,5 @@ async function postFeedback (fbData) {
 
 //Add event listener
 contactFormContainer.addEventListener ("submit", validate);
+
+setHeight (mainSectionContainer, 248);

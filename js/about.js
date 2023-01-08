@@ -1,3 +1,4 @@
+const mainSectionContainer = document.querySelector(".main-section");
 const aboutMeContainer = document.querySelector(".about-me");
 
 const aboutURL = "https://www.myblog.casa/wp-json/wp/v2/pages/?slug=about-me";
@@ -18,4 +19,5 @@ async function getAboutMe () {
     }
 }
 
+setHeight (mainSectionContainer, 248);
 getAboutMe ();
