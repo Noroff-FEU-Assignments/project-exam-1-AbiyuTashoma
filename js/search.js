@@ -35,4 +35,15 @@ function search (event) {
     }
 }
 
+function clearPlaceholder () {
+    searchFieldContainer.placeholder = "";
+}
+
+function showPlaceholder () {
+    searchFieldContainer.placeholder = "search My Blog";
+}
+
+searchFieldContainer.addEventListener("blur", showPlaceholder);
+searchFieldContainer.addEventListener("focus", clearPlaceholder);
+
 searchFormContainer.addEventListener("submit", search);
