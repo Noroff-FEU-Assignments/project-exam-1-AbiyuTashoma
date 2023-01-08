@@ -105,12 +105,32 @@ header {
     background-color: var(--menu-background-color);
 }
 
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
 .search-field {
     padding: 3px;
     font-size: medium;
     border: solid thin var(--post-background-color);
+    height: fit-content;
 }
 
+.search-label {
+    font-size: 2em;
+    color: var(--menu-color);
+    padding: 5px;
+}
+
+.search-label:hover {
+    cursor: pointer;
+}
+
+.search-symbol {
+    display: flex;
+    rotate: 45deg;
+}
 /* ==================================== main ==================================== */
 .main-section {
     max-width: 1250px;
