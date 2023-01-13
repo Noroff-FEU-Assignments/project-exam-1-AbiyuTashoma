@@ -118,12 +118,17 @@ header {
 }
 
 .search-label {
-    font-size: 2em;
     padding: 5px;
+    font-size: 0;
 }
 
 .search-label:hover {
     cursor: pointer;
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
 }
 
 .search-symbol {
