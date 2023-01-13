@@ -127,15 +127,8 @@ header {
 }
 
 .search-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.search-symbol {
-    display: flex;
-    rotate: 45deg;
-    color: var(--menu-color);
-    background-color: transparent;
+    width: 21px;
+    height: 20px;
 }
 /* ==================================== main ==================================== */
 .main-section {
