@@ -130,7 +130,7 @@ header {
     display: flex;
     rotate: 45deg;
     color: var(--menu-color);
-    background-color: white;
+    background-color: transparent;
 }
 /* ==================================== main ==================================== */
 .main-section {
