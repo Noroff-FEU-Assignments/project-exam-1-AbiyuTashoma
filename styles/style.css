@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
     background-color: var(--body-background-color);
     margin: 0;
 }
