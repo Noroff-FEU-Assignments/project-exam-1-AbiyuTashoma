@@ -557,12 +557,11 @@ header {
 
 .a-blog p,
 .about-me p {
-    font-size: x-large;
+    font-size: 22px;
     text-align: justify;
 }
 
 .ablog-h1 {
-    font-size: xx-large;
     margin: 0;
     padding-bottom: 10px;
 }
