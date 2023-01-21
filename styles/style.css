@@ -135,7 +135,6 @@ header {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0 25px;
-    /* min-height: 500px; */
 }
 
 .landing-section {
@@ -385,27 +384,6 @@ header {
 .footer-section {
     color: white;
     background-color: #3a3a3a;
-    /* display: flex; */
-    /* justify-content: space-around; */
-}
-
-/* .menu-footer {
-    text-decoration: none;
-    font-size: 1em;
-    color: white;
-    padding: 3px;
-    width: fit-content;
-} */
-
-/* .menu-footer:hover {
-    text-decoration: underline;
-} */
-
-/* Remove Remove */
-.menu-footer-div {
-    display: none;
-    gap: 10px;
-    width: fit-content;
 }
 
 .social-media {
@@ -630,7 +608,6 @@ header {
 }
 
 /* ====================== about me page ======================= */
-
 .about-me h1 {
     margin-top: 0;
 }
@@ -733,11 +710,6 @@ em {
         font-size: medium;
     }
 
-    /* footer style */
-    .menu-footer-div {
-        flex-direction: column;
-    }
-
     /* blogs */
     .blogs {
         grid-template-columns: 1fr 1fr;
@@ -830,11 +802,6 @@ em {
     .elementcta-div {
         margin-bottom: 10px;
     }
-
-    /* footer */
-    /* .footer-section {
-        flex-direction: column;
-    } */
 
     /* blog */
     .blogs {
